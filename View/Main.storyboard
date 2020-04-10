@@ -4,24 +4,25 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WishList View Controller-->
+        <!--addEntry View Controller-->
         <scene sceneID="4ot-EG-DvG">
             <objects>
-                <viewController title="WishList View Controller" id="P3h-U9-ujH" sceneMemberID="viewController">
+                <viewController title="addEntry View Controller" id="P3h-U9-ujH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KcS-lk-A5V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="H1P-EJ-j3F"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Wish List" id="OgA-ME-3Oh"/>
+                    <tabBarItem key="tabBarItem" title="Add" id="OgA-ME-3Oh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqO-Aa-R47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152.1739130434783" y="-917.41071428571422"/>
+            <point key="canvasLocation" x="680" y="-2087"/>
         </scene>
         <!--Tracker View Controller-->
         <scene sceneID="aGV-ya-Yu3">
@@ -36,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="123" id="vmw-ep-uJN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodEntry Cell" rowHeight="123" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmw-ep-uJN" id="3pS-g2-hHd">
@@ -98,20 +99,44 @@
             </objects>
             <point key="canvasLocation" x="-223.18840579710147" y="-2086.6071428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--WishList View Controller-->
         <scene sceneID="TNd-BD-Biu">
             <objects>
-                <viewController id="a5K-rL-E3d" sceneMemberID="viewController">
+                <viewController title="WishList View Controller" id="a5K-rL-E3d" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNw-6j-9bM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Bm-4s-vjC">
+                                <rect key="frame" x="20" y="72" width="374" height="727"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VqA-Xh-E64">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bPN-Y1-CNb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xa6-UE-qgG">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="u1u-4Q-W7N"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="WishList" id="Npb-QI-ibv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymX-JB-opB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-2087"/>
+            <point key="canvasLocation" x="-1139.1304347826087" y="-927.45535714285711"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y4u-JS-7uN">
@@ -140,6 +165,7 @@
                     <connections>
                         <segue destination="klR-AG-ofL" kind="relationship" relationship="viewControllers" id="beq-jo-Ghz"/>
                         <segue destination="P3h-U9-ujH" kind="relationship" relationship="viewControllers" id="gh9-fa-tCK"/>
+                        <segue destination="a5K-rL-E3d" kind="relationship" relationship="viewControllers" id="cY7-j4-MzG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00x-8f-7V1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
