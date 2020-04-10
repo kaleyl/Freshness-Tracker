@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DF9B2CCF2440224C006D7ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2CCE2440224C006D7ED7 /* Main.storyboard */; };
 		DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */; };
+		DF9B2CDA24403B6C006D7ED7 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */; };
+		DF9B2CDC24403C62006D7ED7 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CDB24403C62006D7ED7 /* AddEntryViewController.swift */; };
+		DF9B2CDE24403C82006D7ED7 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */; };
+		DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CE024403CA9006D7ED7 /* food.swift */; };
 		DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345B243F0F520031D4E1 /* AppDelegate.swift */; };
 		DFB9345E243F0F520031D4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */; };
 		DFB93460243F0F520031D4E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345F243F0F520031D4E1 /* ContentView.swift */; };
@@ -39,6 +43,10 @@
 /* Begin PBXFileReference section */
 		DF9B2CCE2440224C006D7ED7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntryCell.swift; sourceTree = "<group>"; };
+		DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		DF9B2CDB24403C62006D7ED7 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		DF9B2CE024403CA9006D7ED7 /* food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food.swift; sourceTree = "<group>"; };
 		DFB93458243F0F520031D4E1 /* freshness-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freshness-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9345B243F0F520031D4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 		DF9B2CD72440367F006D7ED7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DF9B2CDF24403C87006D7ED7 /* WishList Lab */,
 				DF9B2CD82440368E006D7ED7 /* Tracker Tab */,
 			);
 			path = ViewController;
@@ -100,13 +109,32 @@
 		DF9B2CD82440368E006D7ED7 /* Tracker Tab */ = {
 			isa = PBXGroup;
 			children = (
+				DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */,
+				DF9B2CDB24403C62006D7ED7 /* AddEntryViewController.swift */,
 			);
 			path = "Tracker Tab";
+			sourceTree = "<group>";
+		};
+		DF9B2CDF24403C87006D7ED7 /* WishList Lab */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */,
+			);
+			path = "WishList Lab";
+			sourceTree = "<group>";
+		};
+		DF9B2CE224403CAF006D7ED7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF9B2CE024403CA9006D7ED7 /* food.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DFB9344F243F0F520031D4E1 = {
 			isa = PBXGroup;
 			children = (
+				DF9B2CE224403CAF006D7ED7 /* Model */,
 				DF9B2CD72440367F006D7ED7 /* ViewController */,
 				DF9B2CD024402258006D7ED7 /* View */,
 				DFB9345A243F0F520031D4E1 /* freshness-tracker */,
@@ -298,8 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9B2CDA24403B6C006D7ED7 /* TrackerViewController.swift in Sources */,
 				DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */,
 				DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */,
+				DF9B2CDE24403C82006D7ED7 /* WishlistViewController.swift in Sources */,
+				DF9B2CDC24403C62006D7ED7 /* AddEntryViewController.swift in Sources */,
+				DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */,
 				DFB9345E243F0F520031D4E1 /* SceneDelegate.swift in Sources */,
 				DFB93460243F0F520031D4E1 /* ContentView.swift in Sources */,
 			);
