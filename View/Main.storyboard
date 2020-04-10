@@ -14,13 +14,6 @@
                     <view key="view" contentMode="scaleToFill" id="KcS-lk-A5V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-Rh-5Mh">
-                                <rect key="frame" x="20" y="124" width="374" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="H1P-EJ-j3F"/>
                     </view>
@@ -49,6 +42,38 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmw-ep-uJN" id="3pS-g2-hHd">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOb-at-3Jb">
+                                                    <rect key="frame" x="70" y="37" width="203" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFc-Sx-4gu">
+                                                    <rect key="frame" x="12" y="35" width="50" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-8A-daq">
+                                                    <rect key="frame" x="281" y="37" width="91" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iVF-8A-daq" secondAttribute="trailing" constant="10" id="AcC-NE-nwV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sFc-Sx-4gu" secondAttribute="bottom" constant="26" id="B8h-SY-6bm"/>
+                                                <constraint firstItem="sFc-Sx-4gu" firstAttribute="top" secondItem="3pS-g2-hHd" secondAttribute="topMargin" constant="24" id="EoF-GX-9sP"/>
+                                                <constraint firstItem="sFc-Sx-4gu" firstAttribute="leading" secondItem="3pS-g2-hHd" secondAttribute="leadingMargin" constant="-8" id="Kwh-dh-UoC"/>
+                                                <constraint firstItem="iVF-8A-daq" firstAttribute="centerY" secondItem="3pS-g2-hHd" secondAttribute="centerY" id="MGi-7y-ofW"/>
+                                                <constraint firstItem="WOb-at-3Jb" firstAttribute="leading" secondItem="sFc-Sx-4gu" secondAttribute="trailing" constant="8" id="T9T-st-NvB"/>
+                                                <constraint firstItem="WOb-at-3Jb" firstAttribute="centerY" secondItem="3pS-g2-hHd" secondAttribute="centerY" id="fMr-wf-OeW"/>
+                                                <constraint firstItem="iVF-8A-daq" firstAttribute="leading" secondItem="WOb-at-3Jb" secondAttribute="trailing" constant="8" id="hLw-bV-VVm"/>
+                                                <constraint firstItem="iVF-8A-daq" firstAttribute="height" secondItem="sFc-Sx-4gu" secondAttribute="height" multiplier="1.19608" constant="-11" id="rzJ-BK-LVe"/>
+                                                <constraint firstItem="WOb-at-3Jb" firstAttribute="height" secondItem="sFc-Sx-4gu" secondAttribute="height" multiplier="0.980392" id="wn7-Sk-Bqk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
