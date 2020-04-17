@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import UIKit
+
+struct FoodEntry {
+    var name: String
+    var daysLeft: Int
+    var image: UIImage
+}
+
+
+class FoodData {
+    var foods: [FoodEntry]
+    init(name: String, days: Int) {
+        self.foods = []
+    }
+ 
+    func addEntry(food: FoodEntry) {
+        self.foods.append(contentsOf: food)
+    }
+}
