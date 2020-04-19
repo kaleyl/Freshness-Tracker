@@ -9,7 +9,9 @@
 import UIKit
 
 class WishlistViewController: UIViewController {
-
+    
+    @IBOutlet weak var wishlistTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

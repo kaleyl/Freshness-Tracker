@@ -23,6 +23,6 @@ class FoodData {
     }
  
     func addEntry(food: FoodEntry) {
-        self.foods.append(contentsOf: food)
+        self.foods.append(food)
     }
 }

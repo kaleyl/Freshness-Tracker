@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6953B2244C8CD500785725 /* WishListItemCell.swift */; };
 		DF9B2CCF2440224C006D7ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2CCE2440224C006D7ED7 /* Main.storyboard */; };
 		DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */; };
 		DF9B2CDA24403B6C006D7ED7 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF6953B2244C8CD500785725 /* WishListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemCell.swift; sourceTree = "<group>"; };
 		DF9B2CCE2440224C006D7ED7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntryCell.swift; sourceTree = "<group>"; };
 		DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				DF9B2CCE2440224C006D7ED7 /* Main.storyboard */,
 				DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */,
+				DF6953B2244C8CD500785725 /* WishListItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9B2CDA24403B6C006D7ED7 /* TrackerViewController.swift in Sources */,
+				DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */,
 				DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */,
 				DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */,
 				DF9B2CDE24403C82006D7ED7 /* WishlistViewController.swift in Sources */,
