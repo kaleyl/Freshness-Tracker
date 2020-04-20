@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */; };
+		4BCB136E244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */; };
+		4BCB136F244D802A00C3CCAD /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1369244D802A00C3CCAD /* NunitoSans-Black.ttf */; };
+		4BCB1370244D802A00C3CCAD /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB136A244D802A00C3CCAD /* NunitoSans-Bold.ttf */; };
+		4BCB1371244D802A00C3CCAD /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB136B244D802A00C3CCAD /* NunitoSans-Light.ttf */; };
+		4BCB1372244D802A00C3CCAD /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB136C244D802A00C3CCAD /* NunitoSans-Regular.ttf */; };
+		4BCB1375244D816500C3CCAD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */; };
+		4BCB1376244D816500C3CCAD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */; };
 		DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6953B2244C8CD500785725 /* WishListItemCell.swift */; };
 		DF9B2CCF2440224C006D7ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2CCE2440224C006D7ED7 /* Main.storyboard */; };
 		DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */; };
@@ -16,7 +24,6 @@
 		DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B2CE024403CA9006D7ED7 /* food.swift */; };
 		DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345B243F0F520031D4E1 /* AppDelegate.swift */; };
 		DFB9345E243F0F520031D4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */; };
-		DFB93460243F0F520031D4E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9345F243F0F520031D4E1 /* ContentView.swift */; };
 		DFB93462243F0F530031D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB93461243F0F530031D4E1 /* Assets.xcassets */; };
 		DFB93465243F0F530031D4E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB93464243F0F530031D4E1 /* Preview Assets.xcassets */; };
 		DFB93468243F0F530031D4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB93466243F0F530031D4E1 /* LaunchScreen.storyboard */; };
@@ -42,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB1369244D802A00C3CCAD /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB136A244D802A00C3CCAD /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB136B244D802A00C3CCAD /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB136C244D802A00C3CCAD /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "fonts/Comfortaa/Comfortaa-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Bold.ttf"; path = "fonts/Comfortaa/Comfortaa-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		DF6953B2244C8CD500785725 /* WishListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemCell.swift; sourceTree = "<group>"; };
 		DF9B2CCE2440224C006D7ED7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntryCell.swift; sourceTree = "<group>"; };
@@ -52,7 +67,6 @@
 		DFB93458243F0F520031D4E1 /* freshness-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "freshness-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9345B243F0F520031D4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFB9345F243F0F520031D4E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DFB93461243F0F530031D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFB93464243F0F530031D4E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFB93467243F0F530031D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,6 +104,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BCB1364244D800A00C3CCAD /* font */ = {
+			isa = PBXGroup;
+			children = (
+				4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */,
+				4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */,
+				4BCB1369244D802A00C3CCAD /* NunitoSans-Black.ttf */,
+				4BCB136A244D802A00C3CCAD /* NunitoSans-Bold.ttf */,
+				4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */,
+				4BCB136B244D802A00C3CCAD /* NunitoSans-Light.ttf */,
+				4BCB136C244D802A00C3CCAD /* NunitoSans-Regular.ttf */,
+				4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		DF9B2CD024402258006D7ED7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,9 +166,6 @@
 		DFB9344F243F0F520031D4E1 = {
 			isa = PBXGroup;
 			children = (
-				DF9B2CE224403CAF006D7ED7 /* Model */,
-				DF9B2CD72440367F006D7ED7 /* ViewController */,
-				DF9B2CD024402258006D7ED7 /* View */,
 				DFB9345A243F0F520031D4E1 /* freshness-tracker */,
 				DFB93471243F0F530031D4E1 /* freshness-trackerTests */,
 				DFB9347C243F0F530031D4E1 /* freshness-trackerUITests */,
@@ -162,9 +188,12 @@
 			children = (
 				DFB9345B243F0F520031D4E1 /* AppDelegate.swift */,
 				DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */,
-				DFB9345F243F0F520031D4E1 /* ContentView.swift */,
-				DFB93461243F0F530031D4E1 /* Assets.xcassets */,
 				DFB93466243F0F530031D4E1 /* LaunchScreen.storyboard */,
+				DF9B2CE224403CAF006D7ED7 /* Model */,
+				DF9B2CD72440367F006D7ED7 /* ViewController */,
+				DF9B2CD024402258006D7ED7 /* View */,
+				4BCB1364244D800A00C3CCAD /* font */,
+				DFB93461243F0F530031D4E1 /* Assets.xcassets */,
 				DFB93469243F0F530031D4E1 /* Info.plist */,
 				DFB93463243F0F530031D4E1 /* Preview Content */,
 			);
@@ -304,7 +333,15 @@
 				DFB93468243F0F530031D4E1 /* LaunchScreen.storyboard in Resources */,
 				DFB93465243F0F530031D4E1 /* Preview Assets.xcassets in Resources */,
 				DFB93462243F0F530031D4E1 /* Assets.xcassets in Resources */,
+				4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */,
+				4BCB136F244D802A00C3CCAD /* NunitoSans-Black.ttf in Resources */,
+				4BCB1372244D802A00C3CCAD /* NunitoSans-Regular.ttf in Resources */,
 				DF9B2CCF2440224C006D7ED7 /* Main.storyboard in Resources */,
+				4BCB1370244D802A00C3CCAD /* NunitoSans-Bold.ttf in Resources */,
+				4BCB1376244D816500C3CCAD /* Comfortaa-Bold.ttf in Resources */,
+				4BCB1371244D802A00C3CCAD /* NunitoSans-Light.ttf in Resources */,
+				4BCB136E244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf in Resources */,
+				4BCB1375244D816500C3CCAD /* Comfortaa-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +374,6 @@
 				DF9B2CDC24403C62006D7ED7 /* AddEntryViewController.swift in Sources */,
 				DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */,
 				DFB9345E243F0F520031D4E1 /* SceneDelegate.swift in Sources */,
-				DFB93460243F0F520031D4E1 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,11 +537,11 @@
 		DFB93483243F0F530031D4E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"freshness-tracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "freshness-tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,11 +556,11 @@
 		DFB93484243F0F530031D4E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"freshness-tracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "freshness-tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
