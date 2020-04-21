@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
         <!--addEntry View Controller-->
         <scene sceneID="4ot-EG-DvG">
             <objects>
-                <viewController title="addEntry View Controller" id="P3h-U9-ujH" sceneMemberID="viewController">
+                <viewController title="addEntry View Controller" id="P3h-U9-ujH" customClass="AddEntryViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KcS-lk-A5V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,6 +130,12 @@
                                                 <constraint firstItem="iVF-8A-daq" firstAttribute="leading" secondItem="WOb-at-3Jb" secondAttribute="trailing" constant="8" id="hLw-bV-VVm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="iVF-8A-daq" id="Ip2-m1-W11"/>
+                                            <outlet property="descriptionLabel" destination="Bjo-Mi-m3w" id="bjb-gs-Tca"/>
+                                            <outlet property="imageLabel" destination="yz2-YM-bYA" id="8YQ-EE-yuQ"/>
+                                            <outlet property="nameLabel" destination="WOb-at-3Jb" id="7k2-UI-6cW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
