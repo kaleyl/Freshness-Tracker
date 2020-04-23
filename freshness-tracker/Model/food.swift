@@ -9,20 +9,37 @@
 import Foundation
 import UIKit
 
+//global instance
+var appData = AppData()
+
 struct FoodEntry {
     var name: String
-    var daysLeft: Int
     var image: UIImage
+    var expireDate: Date
+}
+
+struct ListEntry {
+    var name: String
+    var chekced: Bool
 }
 
 
-class FoodData {
-    var foods: [FoodEntry]
-    init(name: String, days: Int) {
-        self.foods = []
+class AppData {
+    var tracker: [FoodEntry]
+    var list: [ListEntry]
+    
+    init() {
+        self.tracker = []
+        self.list = []
+        
+        //add some dummies
     }
  
-    func addEntry(food: FoodEntry) {
-        self.foods.append(food)
+    func addFoodEntry(food: FoodEntry) {
+        self.tracker.append(food)
+    }
+    
+    func addListEntry(item: ListEntry){
+        self.list.append(item)
     }
 }

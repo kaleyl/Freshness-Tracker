@@ -122,6 +122,7 @@
 		DF9B2CD024402258006D7ED7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF6953B4244EB14100785725 /* LaunchScreen.storyboard */,
 				DF9B2CCE2440224C006D7ED7 /* Main.storyboard */,
 				DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */,
 				DF6953B2244C8CD500785725 /* WishListItemCell.swift */,
@@ -187,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				DFB9345B243F0F520031D4E1 /* AppDelegate.swift */,
-				DF6953B4244EB14100785725 /* LaunchScreen.storyboard */,
 				DFB9345D243F0F520031D4E1 /* SceneDelegate.swift */,
 				DF9B2CE224403CAF006D7ED7 /* Model */,
 				DF9B2CD72440367F006D7ED7 /* ViewController */,
