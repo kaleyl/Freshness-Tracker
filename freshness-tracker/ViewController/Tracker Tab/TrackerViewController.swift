@@ -69,25 +69,21 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             success(true)
         })
         TrashAction.backgroundColor = .red
+        TrashAction.image = UIImage(systemName: "trash")
 
         // Write action code for the Flag
-        let FlagAction = UIContextualAction(style: .normal, title:  "Flag", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let AddAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
     
             //action here
-            
             success(true)
         })
-        FlagAction.backgroundColor = .orange
+        AddAction.backgroundColor = .orange
+        AddAction.image = UIImage(systemName: "cart")
 
         // Write action code for the More
-        let MoreAction = UIContextualAction(style: .normal, title:  "More", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("Update action ...")
-            success(true)
-        })
-        MoreAction.backgroundColor = .gray
+ 
 
-
-        return UISwipeActionsConfiguration(actions: [TrashAction,FlagAction,MoreAction])
+        return UISwipeActionsConfiguration(actions: [TrashAction,AddAction])
     }
 
 }
