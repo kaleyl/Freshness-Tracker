@@ -43,3 +43,13 @@ class AppData {
         self.list.append(item)
     }
 }
+
+/*
+ credit to:
+ https://stackoverflow.com/questions/24723431/swift-days-between-two-nsdates
+ */
+func calculateLeftDays(startDate: Date, endDate: Date) -> Int {
+       let calendar = Calendar.current
+       let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+       return components.day!
+   }
