@@ -133,7 +133,7 @@
 		DF9B2CD72440367F006D7ED7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DF9B2CDF24403C87006D7ED7 /* WishList Lab */,
+				DF9B2CDF24403C87006D7ED7 /* WishList Tab */,
 				DF9B2CD82440368E006D7ED7 /* Tracker Tab */,
 			);
 			path = ViewController;
@@ -148,12 +148,12 @@
 			path = "Tracker Tab";
 			sourceTree = "<group>";
 		};
-		DF9B2CDF24403C87006D7ED7 /* WishList Lab */ = {
+		DF9B2CDF24403C87006D7ED7 /* WishList Tab */ = {
 			isa = PBXGroup;
 			children = (
 				DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */,
 			);
-			path = "WishList Lab";
+			path = "WishList Tab";
 			sourceTree = "<group>";
 		};
 		DF9B2CE224403CAF006D7ED7 /* Model */ = {

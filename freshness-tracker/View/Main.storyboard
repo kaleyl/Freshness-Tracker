@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -173,15 +173,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saU-Jr-0Pw">
-                                <rect key="frame" x="10" y="95" width="393" height="706"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saU-Jr-0Pw">
+                                <rect key="frame" x="10" y="95" width="393" height="638"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="2mu-74-UDj" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="393" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistCell" rowHeight="55" id="2mu-74-UDj" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="393" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2mu-74-UDj" id="TTO-yz-pCI">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fresh Milk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUm-4m-X94">
@@ -204,11 +205,11 @@
                                             <outlet property="itemLabel" destination="gUm-4m-X94" id="Tra-Kd-loI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="i3J-9J-Nbn">
-                                        <rect key="frame" x="0.0" y="84" width="393" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="i3J-9J-Nbn" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="393" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i3J-9J-Nbn" id="TP6-xq-wTC">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-jR-P4t">
@@ -228,28 +229,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
-                                <rect key="frame" x="95" y="60" width="223" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
+                                <rect key="frame" x="95" y="60" width="223" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
                                 <color key="textColor" name="WishListOrange"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0V-VI-r0C">
+                                <rect key="frame" x="350" y="750" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Item" image="add_orange"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="c5c-Mb-ccW" firstAttribute="top" secondItem="u1u-4Q-W7N" secondAttribute="top" constant="16" id="Awd-i1-tE9"/>
-                            <constraint firstItem="saU-Jr-0Pw" firstAttribute="bottom" secondItem="u1u-4Q-W7N" secondAttribute="bottom" id="DpJ-vt-vcI"/>
-                            <constraint firstItem="c5c-Mb-ccW" firstAttribute="leading" secondItem="u1u-4Q-W7N" secondAttribute="leading" constant="95" id="Uqn-Yc-0a6"/>
-                            <constraint firstItem="saU-Jr-0Pw" firstAttribute="centerX" secondItem="pNw-6j-9bM" secondAttribute="centerX" id="oKd-XB-73T"/>
-                            <constraint firstItem="saU-Jr-0Pw" firstAttribute="leading" secondItem="u1u-4Q-W7N" secondAttribute="leading" constant="10" id="oT0-a6-jCA"/>
-                            <constraint firstItem="u1u-4Q-W7N" firstAttribute="trailing" secondItem="c5c-Mb-ccW" secondAttribute="trailing" constant="96" id="sdC-T9-ME1"/>
-                            <constraint firstItem="saU-Jr-0Pw" firstAttribute="top" secondItem="c5c-Mb-ccW" secondAttribute="bottom" constant="8" id="vVu-pF-GZM"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u1u-4Q-W7N"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="WishLsit" selectedImage="cart_color" id="Npb-QI-ibv"/>
                     <connections>
+                        <outlet property="wishlistAdd" destination="h0V-VI-r0C" id="Ljc-Wy-Fvl"/>
                         <outlet property="wishlistTable" destination="saU-Jr-0Pw" id="lY7-gN-YHg"/>
                     </connections>
                 </viewController>
@@ -280,6 +279,7 @@
     </scenes>
     <resources>
         <image name="add" width="56" height="56"/>
+        <image name="add_orange" width="680" height="680"/>
         <image name="camera" width="64" height="64"/>
         <image name="cart_color" width="30" height="30"/>
         <image name="checked" width="32" height="32"/>
