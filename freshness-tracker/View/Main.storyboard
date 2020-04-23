@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -169,7 +169,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-fR-lul" userLabel="AddBtn">
-                                <rect key="frame" x="354" y="747" width="48" height="48"/>
+                                <rect key="frame" x="350" y="750" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                                 <connections>
@@ -245,15 +245,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
                                 <rect key="frame" x="95" y="60" width="223" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
                                 <color key="textColor" name="WishListOrange"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saU-Jr-0Pw">
-                                <rect key="frame" x="10" y="95" width="393" height="706"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saU-Jr-0Pw">
+                                <rect key="frame" x="10" y="95" width="393" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistCell" rowHeight="55" id="2mu-74-UDj" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
@@ -275,11 +277,14 @@
                                                     <rect key="frame" x="20" y="15" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="unchecked"/>
+                                                    <connections>
+                                                        <action selector="checkButtonPressed:" destination="2mu-74-UDj" eventType="touchUpInside" id="7cV-YC-e4c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="checkButton" destination="Yil-DS-Tqh" id="yjb-f4-cX7"/>
+                                            <outlet property="checkButton" destination="Yil-DS-Tqh" id="Hl6-vF-rY7"/>
                                             <outlet property="itemLabel" destination="gUm-4m-X94" id="Tra-Kd-loI"/>
                                         </connections>
                                     </tableViewCell>
@@ -307,7 +312,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccE">
                                 <rect key="frame" x="95" y="60" width="223" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -335,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymX-JB-opB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125" y="-899"/>
+            <point key="canvasLocation" x="-126.08695652173914" y="-899.33035714285711"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="bna-ew-oRm">
@@ -369,7 +374,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="a5K-rL-E3d" kind="presentation" modalPresentationStyle="fullScreen" id="S89-MF-qLZ"/>
+                                    <action selector="doneButtonPressed:" destination="dqj-eJ-XfO" eventType="touchUpInside" id="nfm-uC-kAH"/>
+                                    <segue destination="Alo-gq-cVO" kind="presentation" modalPresentationStyle="fullScreen" id="hOv-q9-D3H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -415,17 +421,14 @@
             <point key="canvasLocation" x="-1139" y="-1762"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jBq-U8-4us"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="56" height="56"/>
         <image name="add_orange" width="680" height="680"/>
         <image name="back" width="13" height="24"/>
         <image name="camera" width="64" height="64"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checked" width="32" height="32"/>
-        <image name="hourglass" catalog="system" width="109" height="128"/>
+        <image name="hourglass" catalog="system" width="54" height="64"/>
         <image name="unchecked" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -447,6 +450,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S89-MF-qLZ"/>
+        <segue reference="hOv-q9-D3H"/>
     </inferredMetricsTieBreakers>
 </document>

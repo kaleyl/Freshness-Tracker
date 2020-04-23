@@ -16,29 +16,20 @@ class AddItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? WishlistViewController{
-            if let itemName = newItem.text {
-                let item = ListEntry(name: itemName, chekced: false)
-                dest.wishlist.list.append(item)
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        if let itemName = newItem.text {
+            if itemName != "" {
+                let item = ListEntry(name: itemName, checked: false)
+                appData.list.append(item)
             }
         }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let dest = segue.destination as? UITabBarController{
+            dest.selectedIndex = 1
+        }
     }
-    */
-
 }

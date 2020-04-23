@@ -136,8 +136,6 @@
 			children = (
 				DF6953B4244EB14100785725 /* LaunchScreen.storyboard */,
 				DF9B2CCE2440224C006D7ED7 /* Main.storyboard */,
-				DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */,
-				DF6953B2244C8CD500785725 /* WishListItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +154,7 @@
 			children = (
 				DF9B2CD924403B6C006D7ED7 /* TrackerViewController.swift */,
 				DF9B2CDB24403C62006D7ED7 /* AddEntryViewController.swift */,
+				DF9B2CD424403679006D7ED7 /* FoodEntryCell.swift */,
 			);
 			path = "Tracker Tab";
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 			children = (
 				DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */,
 				4B2D9EB824515573002F7369 /* AddItemViewController.swift */,
+				DF6953B2244C8CD500785725 /* WishListItemCell.swift */,
 			);
 			path = "WishList Tab";
 			sourceTree = "<group>";

@@ -14,15 +14,19 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var wishlistAdd: UIButton!
     
-    let wishlist = AppData();
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wishlist.list.count
+        return appData.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = wishlistTable.dequeueReusableCell(withIdentifier: "wishlistCell") as? WishListItemCell {
-            cell.itemLabel.text = wishlist.list[indexPath.row].name
+            cell.itemLabel.text = appData.list[indexPath.row].name
+            if appData.list[indexPath.row].checked {
+                cell.checkButton.setImage(UIImage(named: "checked"), for: .normal)
+                cell.itemLabel.textColor = UIColor(named: "DarkerGray")
+            } else {
+                cell.checkButton.setImage(UIImage(named: "unchecked"), for: .normal)
+            }
             return cell
         }
         return UITableViewCell()
@@ -32,23 +36,33 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         return 55
     }
     
+   /*
+   credit to:
+   https://stackoverflow.com/questions/32004557/swipe-able-table-view-cell-in-ios-9
+   */
+   func tableView(_ tableView: UITableView,
+                  trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+       // Write action code for the trash
+       let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+           appData.removeItem(name: appData.list[indexPath.row].name)
+           self.viewWillAppear(false)
+           success(true)
+       })
+       TrashAction.backgroundColor = .red
+       TrashAction.image = UIImage(systemName: "trash")
+
+
+       return UISwipeActionsConfiguration(actions: [TrashAction])
+   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        wishlistTable.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

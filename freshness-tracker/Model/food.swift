@@ -20,7 +20,7 @@ struct FoodEntry {
 
 struct ListEntry {
     var name: String
-    var chekced: Bool
+    var checked: Bool
 }
 
 
@@ -38,6 +38,12 @@ class AppData {
         let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date())
         self.tracker.append(apple)
         self.tracker.append(orange)
+        
+        let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
+        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: true)
+        
+        self.list.append(freshMilk)
+        self.list.append(pineappleSausage)
     }
  
     func addFoodEntry(food: FoodEntry) {
@@ -53,6 +59,31 @@ class AppData {
             if (food.name == name) {
                 tracker.remove(at: index)
                 return
+            }
+        }
+    }
+    
+    func removeItem(name: String) {
+        for (index, item) in list.enumerated() {
+            if (item.name == name) {
+                list.remove(at: index)
+                return
+            }
+        }
+    }
+    
+    func changeItemStatus(name: String) {
+        for (index, item) in list.enumerated() {
+            if (item.name == name) {
+                if (item.checked) {
+                    list.remove(at: index)
+                    let unchekedItem = ListEntry(name: name, checked: false)
+                    list.append(unchekedItem)
+                } else {
+                    list.remove(at: index)
+                    let checkedItem = ListEntry(name: name, checked: true)
+                    list.append(checkedItem)
+                }
             }
         }
     }
