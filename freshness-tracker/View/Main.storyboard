@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -181,49 +181,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodEntry Cell" rowHeight="64" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="382" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="110" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmw-ep-uJN" id="3pS-g2-hHd" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-8A-daq">
-                                                    <rect key="frame" x="253" y="5" width="39" height="50"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-8A-daq">
+                                                    <rect key="frame" x="270.5" y="30" width="27" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="45"/>
                                                     <color key="textColor" name="ExpiredRed"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOb-at-3Jb">
-                                                    <rect key="frame" x="72" y="5" width="131" height="50"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="18"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="days past" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjo-Mi-m3w">
-                                                    <rect key="frame" x="300" y="24" width="82" height="25"/>
+                                                    <rect key="frame" x="307.5" y="59.5" width="64.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-YM-bYA">
-                                                    <rect key="frame" x="0.0" y="8" width="48" height="48"/>
+                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOb-at-3Jb">
+                                                    <rect key="frame" x="100" y="10" width="163" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="27"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="iVF-8A-daq" secondAttribute="trailing" constant="10" id="AcC-NE-nwV"/>
-                                                <constraint firstItem="iVF-8A-daq" firstAttribute="centerY" secondItem="3pS-g2-hHd" secondAttribute="centerY" id="MGi-7y-ofW"/>
-                                                <constraint firstItem="WOb-at-3Jb" firstAttribute="centerY" secondItem="3pS-g2-hHd" secondAttribute="centerY" id="fMr-wf-OeW"/>
-                                                <constraint firstItem="iVF-8A-daq" firstAttribute="leading" secondItem="WOb-at-3Jb" secondAttribute="trailing" constant="8" id="hLw-bV-VVm"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="iVF-8A-daq" id="Ip2-m1-W11"/>
-                                            <outlet property="descriptionLabel" destination="Bjo-Mi-m3w" id="bjb-gs-Tca"/>
-                                            <outlet property="imageLabel" destination="yz2-YM-bYA" id="8YQ-EE-yuQ"/>
-                                            <outlet property="nameLabel" destination="WOb-at-3Jb" id="7k2-UI-6cW"/>
+                                            <outlet property="dateLabel" destination="iVF-8A-daq" id="gRT-3x-Hvt"/>
+                                            <outlet property="descriptionLabel" destination="Bjo-Mi-m3w" id="2QE-GO-yXb"/>
+                                            <outlet property="imageLabel" destination="yz2-YM-bYA" id="V5A-8q-dYJ"/>
+                                            <outlet property="nameLabel" destination="WOb-at-3Jb" id="0f5-F2-bkw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,7 +230,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracker" image="hourglass" catalog="system" id="g1I-QV-0x8"/>
                     <connections>
-                        <outlet property="TrackerTable" destination="khd-ro-tQh" id="zaA-7P-OBL"/>
+                        <outlet property="TrackerTableView" destination="khd-ro-tQh" id="5Ko-rN-LOo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNd-X1-kJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccW">
-                                <rect key="frame" x="95" y="60" width="223" height="27"/>
+                                <rect key="frame" x="95" y="60" width="223" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
                                 <color key="textColor" name="WishListOrange"/>
@@ -362,13 +358,16 @@
             <point key="canvasLocation" x="-1139" y="-1762"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jBq-U8-4us"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="56" height="56"/>
         <image name="back" width="13" height="24"/>
         <image name="camera" width="64" height="64"/>
-        <image name="cart.fill" catalog="system" width="64" height="50"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="checked" width="32" height="32"/>
-        <image name="hourglass" catalog="system" width="54" height="64"/>
+        <image name="hourglass" catalog="system" width="109" height="128"/>
         <image name="unchecked" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,7 +388,4 @@
             <color red="0.96862745098039216" green="0.57647058823529407" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="jBq-U8-4us"/>
-    </inferredMetricsTieBreakers>
 </document>

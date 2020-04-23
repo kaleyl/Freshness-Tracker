@@ -112,7 +112,6 @@ class AddEntryViewController: UIViewController {
         if let productName = nameText.text{
             if let productImg = photoView.image{
                 let newFoodEntry = FoodEntry(name: productName, image: productImg, expireDate: datePicker.date)
-                
                 //add to Tracker
                 appData.addFoodEntry(food: newFoodEntry)
             }else{
