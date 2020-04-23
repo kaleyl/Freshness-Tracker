@@ -262,6 +262,9 @@
                                 <rect key="frame" x="350" y="750" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Item" image="add_orange"/>
+                                <connections>
+                                    <segue destination="dqj-eJ-XfO" kind="presentation" modalPresentationStyle="fullScreen" id="IoO-aG-JxJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -276,6 +279,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymX-JB-opB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-125" y="-899"/>
+        </scene>
+        <!--Add Item View Controller-->
+        <scene sceneID="bna-ew-oRm">
+            <objects>
+                <viewController id="dqj-eJ-XfO" customClass="AddItemViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19W-s9-y6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-hy-6H7">
+                                <rect key="frame" x="95" y="60" width="223" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
+                                <color key="textColor" name="WishListOrange"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-vo-PRy">
+                                <rect key="frame" x="60" y="95" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT6-nb-q0A">
+                                <rect key="frame" x="20" y="96" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="unchecked"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdf-wA-bqP">
+                                <rect key="frame" x="357" y="58" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="a5K-rL-E3d" kind="presentation" modalPresentationStyle="fullScreen" id="S89-MF-qLZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NO7-Hg-XbH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MmM-BN-FRf"/>
+                    <connections>
+                        <outlet property="doneButton" destination="Qdf-wA-bqP" id="feZ-SO-m3J"/>
+                        <outlet property="newItem" destination="Ruk-vo-PRy" id="Dy3-O9-QMX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbL-lS-gOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647.82608695652175" y="-899.33035714285711"/>
         </scene>
         <!--Tracker-->
         <scene sceneID="UC0-zV-d4p">
@@ -309,6 +361,7 @@
     <resources>
         <image name="add" width="56" height="56"/>
         <image name="add_orange" width="680" height="680"/>
+        <image name="back" width="13" height="24"/>
         <image name="camera" width="64" height="64"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checked" width="32" height="32"/>
@@ -333,4 +386,7 @@
             <color red="0.96862745098039216" green="0.57647058823529407" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="S89-MF-qLZ"/>
+    </inferredMetricsTieBreakers>
 </document>
