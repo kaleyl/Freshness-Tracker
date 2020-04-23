@@ -14,7 +14,7 @@ var appData = AppData()
 
 struct FoodEntry {
     var name: String
-    var image: UIImage
+    var image: UIImage?
     var expireDate: Date
 }
 
@@ -33,6 +33,11 @@ class AppData {
         self.list = []
         
         //add some dummies
+        let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date())
+        
+        let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date())
+        self.tracker.append(apple)
+        self.tracker.append(orange)
     }
  
     func addFoodEntry(food: FoodEntry) {
@@ -42,6 +47,16 @@ class AppData {
     func addListEntry(item: ListEntry){
         self.list.append(item)
     }
+    
+    func removeFood(name: String) {
+        for (index, food) in tracker.enumerated() {
+            if (food.name == name) {
+                tracker.remove(at: index)
+                return
+            }
+        }
+    }
+
 }
 
 /*
@@ -53,3 +68,4 @@ func calculateLeftDays(startDate: Date, endDate: Date) -> Int {
        let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
        return components.day!
    }
+
