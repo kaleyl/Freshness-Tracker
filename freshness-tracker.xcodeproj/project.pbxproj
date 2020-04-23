@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B556AB0245116CD00FA006D /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B556AAF245116CD00FA006D /* UIExtension.swift */; };
 		4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */; };
 		4BCB136E244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */; };
 		4BCB136F244D802A00C3CCAD /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1369244D802A00C3CCAD /* NunitoSans-Black.ttf */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B556AAF245116CD00FA006D /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1369244D802A00C3CCAD /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Black.ttf"; sourceTree = SOURCE_ROOT; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B556AAE2451169B00FA006D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B556AAF245116CD00FA006D /* UIExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4BCB1364244D800A00C3CCAD /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 			children = (
 				DF9B2CDF24403C87006D7ED7 /* WishList Tab */,
 				DF9B2CD82440368E006D7ED7 /* Tracker Tab */,
+				DF9B2CDF24403C87006D7ED7 /* WishList Lab */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 				4BCB1364244D800A00C3CCAD /* font */,
 				DFB93461243F0F530031D4E1 /* Assets.xcassets */,
 				DFB93469243F0F530031D4E1 /* Info.plist */,
+				4B556AAE2451169B00FA006D /* Extension */,
 				DFB93463243F0F530031D4E1 /* Preview Content */,
 			);
 			path = "freshness-tracker";
@@ -370,6 +382,7 @@
 				DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */,
 				DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */,
 				DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */,
+				4B556AB0245116CD00FA006D /* UIExtension.swift in Sources */,
 				DF9B2CDE24403C82006D7ED7 /* WishlistViewController.swift in Sources */,
 				DF9B2CDC24403C62006D7ED7 /* AddEntryViewController.swift in Sources */,
 				DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */,

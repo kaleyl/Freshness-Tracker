@@ -42,15 +42,26 @@
                                 <color key="textColor" name="TrackGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGt-u1-p6R">
-                                <rect key="frame" x="127" y="124" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omL-M7-tQQ">
                                 <rect key="frame" x="127" y="124" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="LighterGray"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGt-u1-p6R">
+                                <rect key="frame" x="127" y="124" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1h-fc-DRl">
                                 <rect key="frame" x="61" y="320" width="113" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,9 +77,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ym8-ke-3EA">
-                                <rect key="frame" x="0.0" y="449" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="472" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOM-la-TJQ">
+                                <rect key="frame" x="20" y="66" width="17" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="H1P-EJ-j3F"/>
@@ -77,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqO-Aa-R47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679.71014492753625" y="-2087.9464285714284"/>
+            <point key="canvasLocation" x="-1139.1304347826087" y="-146.65178571428569"/>
         </scene>
         <!--Tracker View Controller-->
         <scene sceneID="aGV-ya-Yu3">
@@ -152,18 +168,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euA-8c-9d4">
+                                <rect key="frame" x="20" y="68" width="21" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="BMB-AW-n5d"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tracker" selectedImage="tracker_color" id="g1I-QV-0x8"/>
+                    <tabBarItem key="tabBarItem" title="Tracker" image="hourglass" catalog="system" id="g1I-QV-0x8"/>
                     <connections>
                         <outlet property="TrackerTable" destination="khd-ro-tQh" id="zaA-7P-OBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNd-X1-kJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223.18840579710147" y="-2086.6071428571427"/>
+            <point key="canvasLocation" x="-1139.1304347826087" y="-899.33035714285711"/>
         </scene>
         <!--WishList View Controller-->
         <scene sceneID="TNd-BD-Biu">
@@ -246,7 +267,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="u1u-4Q-W7N"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="WishLsit" selectedImage="cart_color" id="Npb-QI-ibv"/>
+                    <tabBarItem key="tabBarItem" title="WishLsit" image="cart.fill" catalog="system" id="Npb-QI-ibv"/>
                     <connections>
                         <outlet property="wishlistAdd" destination="h0V-VI-r0C" id="Ljc-Wy-Fvl"/>
                         <outlet property="wishlistTable" destination="saU-Jr-0Pw" id="lY7-gN-YHg"/>
@@ -254,18 +275,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymX-JB-opB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1259.4202898550725" y="-899.33035714285711"/>
+            <point key="canvasLocation" x="-125" y="-899"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tracker-->
         <scene sceneID="UC0-zV-d4p">
             <objects>
                 <tabBarController id="Alo-gq-cVO" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="txI-jx-VIb"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xux-ms-a3t" userLabel="Tab Bar">
+                    <navigationItem key="navigationItem" title="Tracker" id="txI-jx-VIb"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="xux-ms-a3t" userLabel="Tab Bar">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="Background"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="TrackGreen"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" name="LighterGray"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="klR-AG-ofL" kind="relationship" relationship="viewControllers" id="beq-jo-Ghz"/>
@@ -281,9 +310,9 @@
         <image name="add" width="56" height="56"/>
         <image name="add_orange" width="680" height="680"/>
         <image name="camera" width="64" height="64"/>
-        <image name="cart_color" width="30" height="30"/>
+        <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checked" width="32" height="32"/>
-        <image name="tracker_color" width="22" height="32"/>
+        <image name="hourglass" catalog="system" width="54" height="64"/>
         <image name="unchecked" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
