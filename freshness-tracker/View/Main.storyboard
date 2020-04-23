@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
-                                    <segue destination="klR-AG-ofL" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ZC3-aj-6jo"/>
+                                    <segue destination="Alo-gq-cVO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="p32-9F-Zqf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Freshness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etg-Mz-w15">
@@ -130,7 +130,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addToTrackerBtnPressed:" destination="P3h-U9-ujH" eventType="touchUpInside" id="zw6-Nx-WKU"/>
-                                    <segue destination="klR-AG-ofL" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hBJ-y7-CvY"/>
+                                    <segue destination="Alo-gq-cVO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jBq-U8-4us"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -390,6 +390,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hBJ-y7-CvY"/>
+        <segue reference="jBq-U8-4us"/>
     </inferredMetricsTieBreakers>
 </document>
