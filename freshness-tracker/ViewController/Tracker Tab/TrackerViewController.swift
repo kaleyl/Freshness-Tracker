@@ -71,7 +71,6 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Write action code for the Flag
         let AddAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-    
             //action here
             success(true)
         })
@@ -79,9 +78,19 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         AddAction.image = UIImage(systemName: "cart")
 
         // Write action code for the More
- 
 
         return UISwipeActionsConfiguration(actions: [TrashAction,AddAction])
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favoriteAction = UIContextualAction(style: .normal, title:  "favorite", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+        favoriteAction.backgroundColor = .systemYellow
+        favoriteAction.image = UIImage(systemName: "star.fill")
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
+
     }
 
 }
