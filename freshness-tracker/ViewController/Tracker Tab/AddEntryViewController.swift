@@ -111,9 +111,20 @@ class AddEntryViewController: UIViewController {
                 //add to Tracker
                 appData.addFoodEntry(food: newFoodEntry)
             }else{
-                print("Product image is required!")
+                let alert = UIAlertController(title: "Product image is required.",
+                      message: "Please insert an image.",
+                      preferredStyle: .alert)
+                 let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                alert.addAction(okay)
+                present(alert, animated: true, completion: nil)
+        
             }
-            print("Product name is required!")
+            let alert = UIAlertController(title: "Product name is required.",
+                  message: "Please enter a Product name",
+                  preferredStyle: .alert)
+             let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+            alert.addAction(okay)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

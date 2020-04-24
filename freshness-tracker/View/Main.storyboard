@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -196,9 +196,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="days past" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjo-Mi-m3w">
-                                                    <rect key="frame" x="307.5" y="59.5" width="64.5" height="20.5"/>
+                                                    <rect key="frame" x="307.5" y="59.5" width="82" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="19"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -325,6 +325,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Item" image="add_orange"/>
                                 <connections>
+                                    <action selector="addButtonPressed:" destination="a5K-rL-E3d" eventType="touchUpInside" id="J2M-bD-mjq"/>
                                     <segue destination="dqj-eJ-XfO" kind="presentation" modalPresentationStyle="fullScreen" id="IoO-aG-JxJ"/>
                                 </connections>
                             </button>
@@ -421,14 +422,17 @@
             <point key="canvasLocation" x="-1139" y="-1762"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hOv-q9-D3H"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="56" height="56"/>
         <image name="add_orange" width="680" height="680"/>
         <image name="back" width="13" height="24"/>
         <image name="camera" width="64" height="64"/>
-        <image name="cart.fill" catalog="system" width="64" height="50"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="checked" width="32" height="32"/>
-        <image name="hourglass" catalog="system" width="54" height="64"/>
+        <image name="hourglass" catalog="system" width="109" height="128"/>
         <image name="unchecked" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -449,7 +453,4 @@
             <color red="0.96862745098039216" green="0.57647058823529407" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hOv-q9-D3H"/>
-    </inferredMetricsTieBreakers>
 </document>

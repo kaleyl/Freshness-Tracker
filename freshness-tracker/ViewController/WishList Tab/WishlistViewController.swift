@@ -28,8 +28,9 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.checkButton.setImage(UIImage(named: "unchecked"), for: .normal)
             }
             return cell
+        } else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,4 +66,5 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
     }
+    
 }
