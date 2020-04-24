@@ -98,11 +98,7 @@ class AddEntryViewController: UIViewController {
             //update dayLabel
             estimateLabel1.isHidden = false
             dayLabel.text = String(diff)
-            if(diff < 4){
-                dayLabel.textColor = UIColor(named: "SoonYellow")
-            }else{
-                dayLabel.textColor = UIColor(named:"FreshGreen")
-            }
+            dayLabel.textColor = getLeftDaysColor(daysLeft: diff)
             estimateLabel2.isHidden = false
         }
     }

@@ -33,12 +33,14 @@ class AppData {
         self.list = []
         
         //add some dummies
+        //tracker list
         let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date())
         
         let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date())
         self.tracker.append(apple)
         self.tracker.append(orange)
         
+        //wish list
         let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
         let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: true)
         
@@ -99,4 +101,15 @@ func calculateLeftDays(startDate: Date, endDate: Date) -> Int {
        let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
        return components.day!
    }
+
+
+func getLeftDaysColor(daysLeft:Int) -> UIColor {
+    if(daysLeft <= 0){
+        return UIColor(named: "ExpiredRed")!
+    }else if(daysLeft < 4){
+        return UIColor(named: "SoonYellow")!
+    }else{
+        return UIColor(named: "FreshGreen")!
+    }
+}
 
