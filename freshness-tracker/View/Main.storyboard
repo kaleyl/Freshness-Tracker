@@ -325,7 +325,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Item" image="add_orange"/>
                                 <connections>
-                                    <action selector="addButtonPressed:" destination="a5K-rL-E3d" eventType="touchUpInside" id="J2M-bD-mjq"/>
                                     <segue destination="dqj-eJ-XfO" kind="presentation" modalPresentationStyle="fullScreen" id="IoO-aG-JxJ"/>
                                 </connections>
                             </button>
