@@ -160,26 +160,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXI-YP-OXG">
-                                <rect key="frame" x="96" y="66" width="223" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXI-YP-OXG">
+                                <rect key="frame" x="96" y="66" width="222" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="yTe-9p-e0D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="30"/>
                                 <color key="textColor" name="TrackGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-fR-lul" userLabel="AddBtn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-fR-lul" userLabel="AddBtn">
                                 <rect key="frame" x="350" y="750" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                                 <connections>
                                     <segue destination="P3h-U9-ujH" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="fbh-Kj-1lW"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="khd-ro-tQh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="khd-ro-tQh">
                                 <rect key="frame" x="16" y="117" width="382" height="622"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="622" id="z1E-1R-v6k"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="110" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="110"/>
@@ -188,15 +191,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-8A-daq">
-                                                    <rect key="frame" x="270.5" y="30" width="27" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="45"/>
-                                                    <color key="textColor" name="ExpiredRed"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="days past" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjo-Mi-m3w">
-                                                    <rect key="frame" x="307.5" y="59.5" width="82" height="26"/>
+                                                    <rect key="frame" x="290" y="74" width="82" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="19"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,10 +203,17 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOb-at-3Jb">
-                                                    <rect key="frame" x="100" y="10" width="163" height="80"/>
+                                                    <rect key="frame" x="100" y="38" width="163" height="34.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="27"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="25"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-8A-daq">
+                                                    <rect key="frame" x="261" y="24.5" width="55" height="61.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="45"/>
+                                                    <color key="textColor" name="ExpiredRed"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -224,13 +227,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b1-am-smh">
+                                <rect key="frame" x="363" y="61" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4b1-am-smh" secondAttribute="height" multiplier="1:1" id="l5c-ro-HfF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" image="Sort Icon"/>
+                                <connections>
+                                    <action selector="sortButtonPressed:" destination="klR-AG-ofL" eventType="touchUpInside" id="d1s-Px-HPy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vXI-YP-OXG" firstAttribute="centerX" secondItem="hBP-rg-gcg" secondAttribute="centerX" id="0Ud-DZ-Znm"/>
+                            <constraint firstItem="khd-ro-tQh" firstAttribute="top" secondItem="vXI-YP-OXG" secondAttribute="bottom" constant="24" id="ENo-6I-hdG"/>
+                            <constraint firstItem="xxH-fR-lul" firstAttribute="top" secondItem="khd-ro-tQh" secondAttribute="bottom" constant="11" id="Ell-Vd-Gmh"/>
+                            <constraint firstItem="vXI-YP-OXG" firstAttribute="centerX" secondItem="khd-ro-tQh" secondAttribute="centerX" id="Hep-AE-CL7"/>
+                            <constraint firstItem="4b1-am-smh" firstAttribute="height" secondItem="vXI-YP-OXG" secondAttribute="height" multiplier="1.18519" id="Jk6-fE-guz"/>
+                            <constraint firstItem="vXI-YP-OXG" firstAttribute="top" secondItem="BMB-AW-n5d" secondAttribute="top" constant="22" id="MRN-Td-t4u"/>
+                            <constraint firstItem="4b1-am-smh" firstAttribute="leading" secondItem="vXI-YP-OXG" secondAttribute="trailing" constant="45" id="PDY-0c-0K0"/>
+                            <constraint firstItem="vXI-YP-OXG" firstAttribute="leading" secondItem="BMB-AW-n5d" secondAttribute="leading" constant="96" id="SY8-ja-8ex"/>
+                            <constraint firstItem="khd-ro-tQh" firstAttribute="trailing" secondItem="xxH-fR-lul" secondAttribute="trailing" id="mqX-ei-BMP"/>
+                            <constraint firstItem="khd-ro-tQh" firstAttribute="leading" secondItem="BMB-AW-n5d" secondAttribute="leading" constant="16" id="tMp-5Q-hkQ"/>
+                            <constraint firstItem="vXI-YP-OXG" firstAttribute="bottom" secondItem="4b1-am-smh" secondAttribute="bottom" id="z5T-SO-wOu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BMB-AW-n5d"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracker" image="hourglass" catalog="system" id="g1I-QV-0x8"/>
                     <connections>
                         <outlet property="TrackerTableView" destination="khd-ro-tQh" id="5Ko-rN-LOo"/>
+                        <outlet property="sortButton" destination="4b1-am-smh" id="4wd-De-alL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNd-X1-kJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -422,9 +450,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hOv-q9-D3H"/>
+        <segue reference="p32-9F-Zqf"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Sort Icon" width="2536" height="2211"/>
         <image name="add" width="56" height="56"/>
         <image name="add_orange" width="680" height="680"/>
         <image name="back" width="13" height="24"/>

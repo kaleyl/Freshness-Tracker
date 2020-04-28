@@ -13,6 +13,8 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var TrackerTableView: UITableView!
     
+    @IBOutlet weak var sortButton: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         TrackerTableView.rowHeight = 110
@@ -59,7 +61,6 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
      
         let selectedFood = appData.tracker[indexPath.item]
-        
         // Write action code for the trash
         let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             appData.removeFood(name: selectedFood.name)
@@ -72,6 +73,8 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Write action code for the Flag
         let AddAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             //action here
+            let newItem = ListEntry(name: selectedFood.name, checked: false)
+            appData.addListEntry(item: newItem)
             success(true)
         })
         AddAction.backgroundColor = .orange
@@ -84,13 +87,42 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView,
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    
+        let selectedFood = appData.tracker[indexPath.item]
         let favoriteAction = UIContextualAction(style: .normal, title:  "favorite", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            let selectedFood = appData.tracker[indexPath.item]
+            appData.addToFavorite(food: selectedFood)
             success(true)
         })
         favoriteAction.backgroundColor = .systemYellow
         favoriteAction.image = UIImage(systemName: "star.fill")
         return UISwipeActionsConfiguration(actions: [favoriteAction])
-
     }
-
+    
+    
+    @IBAction func sortButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Sort items by:",
+        message: "", preferredStyle: .actionSheet)
+        
+        
+        let sortExpireDateAction = UIAlertAction(title: "Expiration Date",style: .destructive) { (action) in
+                    appData.tracker.sort(by: sortExpireDate(this:that:))
+                    self.viewWillAppear(false)
+        }
+        let sortDateAddedAction = UIAlertAction(title: "Date Added", style: .destructive) { (action) in
+                    appData.tracker.sort(by: sortDateAdded(this:that:))
+                    self.viewWillAppear(false)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+                  style: .cancel) { (action) in
+         
+        }
+             
+        alert.addAction(sortExpireDateAction)
+        alert.addAction(sortDateAddedAction)
+        alert.addAction(cancelAction)
+             
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

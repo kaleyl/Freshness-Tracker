@@ -16,6 +16,7 @@ struct FoodEntry {
     var name: String
     var image: UIImage?
     var expireDate: Date
+    var dateAdded: Date
 }
 
 struct ListEntry {
@@ -27,17 +28,26 @@ struct ListEntry {
 class AppData {
     var tracker: [FoodEntry]
     var list: [ListEntry]
+    var favorite : [FoodEntry]
     
     init() {
         self.tracker = []
         self.list = []
+        self.favorite = []
         
         //add some dummies
         //tracker list
-        let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date())
+        let date = Date()
+        var components = DateComponents()
+        components.setValue(1, for: .month)
+      
+        let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date(), dateAdded: Date())
+        let bread = FoodEntry(name: "Bread", image: UIImage(named: "food"), expireDate:Calendar.current.date(byAdding: components, to: date)!, dateAdded: Date())
+        let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date(), dateAdded: Date())
+       
         
-        let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date())
         self.tracker.append(apple)
+        self.tracker.append(bread)
         self.tracker.append(orange)
         
         //wish list
@@ -52,8 +62,12 @@ class AppData {
         self.tracker.append(food)
     }
     
-    func addListEntry(item: ListEntry){
+    func addListEntry(item: ListEntry) {
         self.list.append(item)
+    }
+    
+    func addToFavorite(food: FoodEntry) {
+        self.favorite.append(food)
     }
     
     func removeFood(name: String) {
@@ -113,3 +127,13 @@ func getLeftDaysColor(daysLeft:Int) -> UIColor {
     }
 }
 
+func sortExpireDate(this: FoodEntry, that: FoodEntry) -> Bool {
+    let thisDate = calculateLeftDays(startDate: Date(), endDate: this.expireDate)
+    let thatDate = calculateLeftDays(startDate: Date(), endDate: that.expireDate)
+    return thisDate < thatDate
+}
+
+
+func sortDateAdded(this: FoodEntry, that: FoodEntry) -> Bool {
+    return this.dateAdded < that.dateAdded
+}

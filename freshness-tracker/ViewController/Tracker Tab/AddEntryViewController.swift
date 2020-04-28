@@ -105,24 +105,25 @@ class AddEntryViewController: UIViewController {
     
     @IBAction func addToTrackerBtnPressed(_ sender: Any) {
         //create new food entry
-        if let productName = nameText.text{
-            if let productImg = photoView.image{
-                let newFoodEntry = FoodEntry(name: productName, image: productImg, expireDate: datePicker.date)
+        var image = UIImage(named: "food")
+        if let productName = nameText.text  {
+            if let productImg = photoView.image {
+                let newFoodEntry = FoodEntry(name: productName, image: productImg, expireDate: datePicker.date, dateAdded: Date())
                 //add to Tracker
                 appData.addFoodEntry(food: newFoodEntry)
-            }else{
+            } else {
                 let alert = UIAlertController(title: "Product image is required.",
-                      message: "Please insert an image.",
-                      preferredStyle: .alert)
-                 let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                                 message: "Please enter a Product image.",
+                                 preferredStyle: .alert)
+                let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
                 alert.addAction(okay)
                 present(alert, animated: true, completion: nil)
-        
             }
+        } else {
             let alert = UIAlertController(title: "Product name is required.",
-                  message: "Please enter a Product name",
-                  preferredStyle: .alert)
-             let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                         message: "Please enter a Product name.",
+                         preferredStyle: .alert)
+            let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
             alert.addAction(okay)
             present(alert, animated: true, completion: nil)
         }
