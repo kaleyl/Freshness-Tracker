@@ -17,7 +17,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TrackerTableView.rowHeight = 110
+        TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
         // Do any additional setup after loading the view.
