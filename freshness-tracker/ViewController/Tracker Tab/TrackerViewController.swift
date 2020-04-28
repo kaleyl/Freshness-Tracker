@@ -105,14 +105,16 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         message: "", preferredStyle: .actionSheet)
         
         
-        let sortExpireDateAction = UIAlertAction(title: "Expiration Date",style: .destructive) { (action) in
+        let sortExpireDateAction = UIAlertAction(title: "Expiration Date",style: .default
+        ) { (action) in
                     appData.tracker.sort(by: sortExpireDate(this:that:))
                     self.viewWillAppear(false)
         }
-        let sortDateAddedAction = UIAlertAction(title: "Date Added", style: .destructive) { (action) in
+        let sortDateAddedAction = UIAlertAction(title: "Date Added", style: .default) { (action) in
                     appData.tracker.sort(by: sortDateAdded(this:that:))
                     self.viewWillAppear(false)
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel",
                   style: .cancel) { (action) in
          
