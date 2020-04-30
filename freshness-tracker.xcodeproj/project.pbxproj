@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B2D9EB924515573002F7369 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D9EB824515573002F7369 /* AddItemViewController.swift */; };
 		4B556AB0245116CD00FA006D /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B556AAF245116CD00FA006D /* UIExtension.swift */; };
 		4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */; };
 		4BCB136E244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */; };
@@ -54,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B2D9EB824515573002F7369 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		4B556AAF245116CD00FA006D /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				DF9B2CDD24403C82006D7ED7 /* WishlistViewController.swift */,
-				4B2D9EB824515573002F7369 /* AddItemViewController.swift */,
 				DF6953B2244C8CD500785725 /* WishListItemCell.swift */,
 			);
 			path = "WishList Tab";
@@ -277,7 +274,6 @@
 				EE5662C802C6E015BBBA76A7 /* Pods-freshness-trackerTests.debug.xcconfig */,
 				AD775B84C8B32803E1AFD461 /* Pods-freshness-trackerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -534,7 +530,6 @@
 				DF9B2CD62440367D006D7ED7 /* FoodEntryCell.swift in Sources */,
 				DFB9345C243F0F520031D4E1 /* AppDelegate.swift in Sources */,
 				4B556AB0245116CD00FA006D /* UIExtension.swift in Sources */,
-				4B2D9EB924515573002F7369 /* AddItemViewController.swift in Sources */,
 				DF9B2CDE24403C82006D7ED7 /* WishlistViewController.swift in Sources */,
 				DF9B2CDC24403C62006D7ED7 /* AddEntryViewController.swift in Sources */,
 				DF9B2CE124403CA9006D7ED7 /* food.swift in Sources */,

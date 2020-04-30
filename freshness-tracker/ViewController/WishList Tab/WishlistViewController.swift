@@ -14,6 +14,12 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var wishlistAdd: UIButton!
     
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var addTextField: UITextField!
+    
+    @IBOutlet weak var menuButton: UIButton!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appData.list.count
     }
@@ -26,6 +32,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.itemLabel.textColor = UIColor(named: "DarkerGray")
             } else {
                 cell.checkButton.setImage(UIImage(named: "unchecked"), for: .normal)
+                cell.itemLabel.textColor = UIColor(named: "Black")
             }
             return cell
         } else {
@@ -56,6 +63,54 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
 
        return UISwipeActionsConfiguration(actions: [TrashAction])
    }
+    
+    @IBAction func checkButtonPressed(_ sender: UIButton) {
+        appData.sortItems()
+        wishlistTable.reloadData()
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        if let itemName = addTextField.text {
+            if itemName != "" {
+                let item = ListEntry(name: itemName, checked: false)
+                appData.list.append(item)
+                appData.sortItems()
+            }
+        }
+        wishlistTable.reloadData()
+        addTextField.text = nil
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "",
+        message: "", preferredStyle: .actionSheet)
+        
+        
+        let clearCompletedAction = UIAlertAction(title: "Clear Completed",style: .default
+        ) { (action) in
+            for item in appData.list {
+                if item.checked {
+                    appData.removeItem(name: item.name)
+                }
+            }
+            self.wishlistTable.reloadData()
+        }
+        let ckearAllAction = UIAlertAction(title: "Clear All", style: .default) { (action) in
+            appData.list = []
+            self.wishlistTable.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                  style: .cancel) { (action) in
+         
+        }
+             
+        alert.addAction(clearCompletedAction)
+        alert.addAction(ckearAllAction)
+        alert.addAction(cancelAction)
+             
+        present(alert, animated: true, completion: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         wishlistTable.reloadData()

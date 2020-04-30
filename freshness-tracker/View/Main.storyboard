@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,9 +10,6 @@
     <customFonts key="customFonts">
         <array key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
-        </array>
-        <array key="Comfortaa-Regular.ttf">
-            <string>Comfortaa-Regular</string>
         </array>
         <array key="NunitoSans-Bold.ttf">
             <string>NunitoSans-Bold</string>
@@ -290,7 +287,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saU-Jr-0Pw">
-                                <rect key="frame" x="16" y="120" width="382" height="622"/>
+                                <rect key="frame" x="16" y="144" width="382" height="660"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -314,6 +311,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="unchecked"/>
                                                     <connections>
+                                                        <action selector="checkButtonPressed:" destination="a5K-rL-E3d" eventType="touchUpInside" id="09Q-Xm-jpV"/>
                                                         <action selector="checkButtonPressed:" destination="2mu-74-UDj" eventType="touchUpInside" id="7cV-YC-e4c"/>
                                                     </connections>
                                                 </button>
@@ -348,14 +346,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0V-VI-r0C">
-                                <rect key="frame" x="350" y="750" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New Item" image="add_orange"/>
-                                <connections>
-                                    <segue destination="dqj-eJ-XfO" kind="presentation" modalPresentationStyle="fullScreen" id="IoO-aG-JxJ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Mb-ccE">
                                 <rect key="frame" x="96" y="61" width="223" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -364,72 +354,43 @@
                                 <color key="textColor" name="WishListOrange"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDe-fz-zWC">
+                                <rect key="frame" x="83" y="106" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-b2-ZcR">
+                                <rect key="frame" x="36" y="107" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="add_orange"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="a5K-rL-E3d" eventType="touchUpInside" id="2WK-A6-GE7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcl-uN-me5">
+                                <rect key="frame" x="367" y="61" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="a5K-rL-E3d" eventType="touchUpInside" id="F6g-Gm-6iZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="u1u-4Q-W7N"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="WishLsit" image="cart.fill" catalog="system" id="Npb-QI-ibv"/>
                     <connections>
-                        <outlet property="wishlistAdd" destination="h0V-VI-r0C" id="Ljc-Wy-Fvl"/>
+                        <outlet property="addButton" destination="m9W-b2-ZcR" id="6Ll-Zr-8qQ"/>
+                        <outlet property="addTextField" destination="pDe-fz-zWC" id="tuz-pc-8Xi"/>
+                        <outlet property="menuButton" destination="Tcl-uN-me5" id="hH3-k1-dqO"/>
                         <outlet property="wishlistTable" destination="saU-Jr-0Pw" id="lY7-gN-YHg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymX-JB-opB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126.08695652173914" y="-899.33035714285711"/>
-        </scene>
-        <!--Add Item View Controller-->
-        <scene sceneID="bna-ew-oRm">
-            <objects>
-                <viewController id="dqj-eJ-XfO" customClass="AddItemViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="19W-s9-y6s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-hy-6H7">
-                                <rect key="frame" x="95" y="61" width="223" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="30"/>
-                                <color key="textColor" name="WishListOrange"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ruk-vo-PRy">
-                                <rect key="frame" x="84" y="120" width="310" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdf-wA-bqP">
-                                <rect key="frame" x="344" y="61" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="18"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" name="WishListOrange"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="dqj-eJ-XfO" eventType="touchUpInside" id="nfm-uC-kAH"/>
-                                    <segue destination="Alo-gq-cVO" kind="presentation" modalPresentationStyle="fullScreen" id="hOv-q9-D3H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT6-nb-q0A">
-                                <rect key="frame" x="36" y="121" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="unchecked"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="NO7-Hg-XbH"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="MmM-BN-FRf"/>
-                    <connections>
-                        <outlet property="doneButton" destination="Qdf-wA-bqP" id="feZ-SO-m3J"/>
-                        <outlet property="newItem" destination="Ruk-vo-PRy" id="Dy3-O9-QMX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nbL-lS-gOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="647.82608695652175" y="-899.33035714285711"/>
         </scene>
         <!--Tracker-->
         <scene sceneID="UC0-zV-d4p">
@@ -470,6 +431,7 @@
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checked" width="32" height="32"/>
         <image name="hourglass" catalog="system" width="54" height="64"/>
+        <image name="menu" width="36" height="36"/>
         <image name="unchecked" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

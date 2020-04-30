@@ -98,6 +98,16 @@ class AppData {
         }
     }
     
+    func sortItems() {
+        appData.list.sort{
+            if ($0.checked != $1.checked) {
+                return !$0.checked && $1.checked
+            } else {
+                return $0.name < $1.name
+            }
+        }
+    }
+    
     func changeItemStatus(name: String) {
         for (index, item) in list.enumerated() {
             if (item.name == name) {
@@ -105,10 +115,12 @@ class AppData {
                     list.remove(at: index)
                     let unchekedItem = ListEntry(name: name, checked: false)
                     list.append(unchekedItem)
+                    self.sortItems()
                 } else {
                     list.remove(at: index)
                     let checkedItem = ListEntry(name: name, checked: true)
                     list.append(checkedItem)
+                    self.sortItems()
                 }
             }
         }
