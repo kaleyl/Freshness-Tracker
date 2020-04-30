@@ -9,15 +9,15 @@
 import UIKit
 import SearchTextField
 
-class AddEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class AddEntryViewController: UIViewController{
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
-    }
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        //, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate 
+//    }
+//    
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        <#code#>
+//    }
     
     
     
