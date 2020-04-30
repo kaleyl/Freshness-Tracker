@@ -9,7 +9,17 @@
 import UIKit
 import SearchTextField
 
-class AddEntryViewController: UIViewController {
+class AddEntryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+    
+    
     
     @IBOutlet weak var photoView: UIImageView!
     
