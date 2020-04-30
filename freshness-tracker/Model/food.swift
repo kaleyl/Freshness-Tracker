@@ -29,11 +29,13 @@ class AppData {
     var tracker: [FoodEntry]
     var list: [ListEntry]
     var favorite : [FoodEntry]
+    var record: [String]
     
     init() {
         self.tracker = []
         self.list = []
         self.favorite = []
+        self.record = [] //used for autocomplete
         
         //add some dummies
         //tracker list
@@ -50,6 +52,10 @@ class AppData {
         self.tracker.append(bread)
         self.tracker.append(orange)
         
+        self.record.append(apple.name)
+        self.record.append(bread.name)
+        self.record.append(orange.name)
+        
         //wish list
         let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
         let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: true)
@@ -60,6 +66,10 @@ class AppData {
  
     func addFoodEntry(food: FoodEntry) {
         self.tracker.append(food)
+        //check if already contains name
+        if(!self.record.contains(food.name)){
+            self.record.append(food.name)
+        }
     }
     
     func addListEntry(item: ListEntry) {
