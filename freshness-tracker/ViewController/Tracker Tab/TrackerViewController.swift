@@ -42,9 +42,13 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             cell.nameLabel.text = currentFood.name
             let daysLeft = calculateLeftDays(startDate:  Date(), endDate: currentFood.expireDate)
-            cell.dateLabel.text = String(daysLeft)
+            if(daysLeft < 0){
+                 cell.descriptionLabel.text = "days past"
+            }else{
+                 cell.descriptionLabel.text = "days left"
+            }
+            cell.dateLabel.text = String(abs(daysLeft))
             cell.dateLabel.textColor = getLeftDaysColor(daysLeft: daysLeft)
-            cell.descriptionLabel.text = "days left"
             
             return cell
         } else {

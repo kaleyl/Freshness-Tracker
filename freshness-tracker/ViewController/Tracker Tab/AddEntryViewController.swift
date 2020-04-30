@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 class AddEntryViewController: UIViewController {
     
@@ -14,7 +15,7 @@ class AddEntryViewController: UIViewController {
     
     @IBOutlet weak var photoBtn: UIButton!
     
-    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var nameText: SearchTextField!
     
     @IBOutlet weak var dateText: UITextField!
     
@@ -43,6 +44,14 @@ class AddEntryViewController: UIViewController {
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
         
+        //Autocomplete UITextField
+        /*
+            Credit to:
+            https://github.com/apasccon/SearchTextField
+         */
+        nameText.filterStrings(appData.record)
+        nameText.theme.font = UIFont(name: "Nunito Sans", size: 16)!
+        nameText.theme.bgColor = UIColor.white
     }
     
     @IBAction func photoBtnPressed(_ sender: Any) {
@@ -93,7 +102,13 @@ class AddEntryViewController: UIViewController {
         
         //check if input day is valid
         if(diff < 0){
-            print("Input date is invalid: food has expired")
+            // Input date is invalid: food has expired
+            errorHandleAlert(view: self, title: "Entered food has expired.", msg: "Please enter a valid expiry date.")
+            //clean up textfield
+            self.dateText.text = ""
+            estimateLabel1.isHidden = true
+            dayLabel.text = ""
+            estimateLabel2.isHidden = true
         }else{
             //update dayLabel
             estimateLabel1.isHidden = false
@@ -104,30 +119,31 @@ class AddEntryViewController: UIViewController {
     }
     
     @IBAction func addToTrackerBtnPressed(_ sender: Any) {
-        //create new food entry
-        var image = UIImage(named: "food")
-        if let productName = nameText.text  {
-            if let productImg = photoView.image {
-                let newFoodEntry = FoodEntry(name: productName, image: productImg, expireDate: datePicker.date, dateAdded: Date())
-                //add to Tracker
-                appData.addFoodEntry(food: newFoodEntry)
-            } else {
-                let alert = UIAlertController(title: "Product image is required.",
-                                 message: "Please enter a Product image.",
-                                 preferredStyle: .alert)
-                let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
-                alert.addAction(okay)
-                present(alert, animated: true, completion: nil)
-            }
+        //check if all input is filled
+        if(nameText.text == ""){
+            errorHandleAlert(view: self, title: "Product name is required.", msg: "Please enter a Product name.")
+        }
+        
+        let productName = nameText.text!.lowercased().capitalized
+    
+        if let productImg = photoView.image {
+            let newFoodEntry = FoodEntry(name: productName, image: productImg, expireDate: datePicker.date, dateAdded: Date())
+            //add to Tracker
+            appData.addFoodEntry(food: newFoodEntry)
         } else {
-            let alert = UIAlertController(title: "Product name is required.",
-                         message: "Please enter a Product name.",
-                         preferredStyle: .alert)
-            let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
-            alert.addAction(okay)
-            present(alert, animated: true, completion: nil)
+             errorHandleAlert(view: self, title: "Product image is required.", msg: "Please enter a Product image.")
         }
     }
+}
+
+func errorHandleAlert(view:AddEntryViewController,title:String,msg:String){
+    let alert = UIAlertController(title: title,
+                                    message: msg,
+                                    preferredStyle: .alert)
+    let okay = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+    alert.addAction(okay)
+    view.present(alert, animated: true, completion: nil)
+    
 }
 
 extension AddEntryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
