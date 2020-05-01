@@ -16,6 +16,7 @@
 		4BCB1372244D802A00C3CCAD /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB136C244D802A00C3CCAD /* NunitoSans-Regular.ttf */; };
 		4BCB1375244D816500C3CCAD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */; };
 		4BCB1376244D816500C3CCAD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */; };
+		4BE27D53245C8C6A0011CDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE27D52245C8C6A0011CDCD /* GoogleService-Info.plist */; };
 		5DC2960443744D4394B56544 /* Pods_freshness_trackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6F3F5BF7604498B692120D /* Pods_freshness_trackerTests.framework */; };
 		7AC98321F7D2BBFE1AACEEC0 /* Pods_freshness_tracker_freshness_trackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA298AE52C643C6A4BF891 /* Pods_freshness_tracker_freshness_trackerUITests.framework */; };
 		DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6953B2244C8CD500785725 /* WishListItemCell.swift */; };
@@ -62,6 +63,7 @@
 		4BCB136C244D802A00C3CCAD /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "fonts/Nunito_Sans/NunitoSans-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "fonts/Comfortaa/Comfortaa-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Bold.ttf"; path = "fonts/Comfortaa/Comfortaa-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		4BE27D52245C8C6A0011CDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F6F3F5BF7604498B692120D /* Pods_freshness_trackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freshness_trackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9D99BC088D4FA4912150EE /* Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig"; path = "Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		901F27FA036ECE3F0CECC7AD /* Pods-freshness-tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker.debug.xcconfig"; path = "Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				4BCB1364244D800A00C3CCAD /* font */,
 				DFB93461243F0F530031D4E1 /* Assets.xcassets */,
 				DFB93469243F0F530031D4E1 /* Info.plist */,
+				4BE27D52245C8C6A0011CDCD /* GoogleService-Info.plist */,
 				4B556AAE2451169B00FA006D /* Extension */,
 				DFB93463243F0F530031D4E1 /* Preview Content */,
 			);
@@ -386,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE27D53245C8C6A0011CDCD /* GoogleService-Info.plist in Resources */,
 				DFB93465243F0F530031D4E1 /* Preview Assets.xcassets in Resources */,
 				DFB93462243F0F530031D4E1 /* Assets.xcassets in Resources */,
 				4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */,
@@ -696,7 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "freshness-tracker.freshness-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkeley.freshness-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -716,7 +720,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "freshness-tracker.freshness-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.berkeley.freshness-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
