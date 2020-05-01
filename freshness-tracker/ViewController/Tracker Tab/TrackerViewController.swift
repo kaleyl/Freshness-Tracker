@@ -89,21 +89,6 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         return UISwipeActionsConfiguration(actions: [TrashAction,AddAction])
     }
     
-    func tableView(_ tableView: UITableView,
-                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-    
-        let selectedFood = appData.tracker[indexPath.item]
-        let favoriteAction = UIContextualAction(style: .normal, title:  "favorite", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            let selectedFood = appData.tracker[indexPath.item]
-            appData.addToFavorite(food: selectedFood)
-            success(true)
-        })
-        favoriteAction.backgroundColor = .systemYellow
-        favoriteAction.image = UIImage(systemName: "star.fill")
-        return UISwipeActionsConfiguration(actions: [favoriteAction])
-    }
-    
-    
     @IBAction func sortButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Sort items by:",
         message: "", preferredStyle: .actionSheet)

@@ -28,13 +28,11 @@ struct ListEntry {
 class AppData {
     var tracker: [FoodEntry]
     var list: [ListEntry]
-    var favorite : [FoodEntry]
     var record: [String]
     
     init() {
         self.tracker = []
         self.list = []
-        self.favorite = []
         self.record = [] //used for autocomplete
         
         //add some dummies
@@ -74,10 +72,6 @@ class AppData {
     
     func addListEntry(item: ListEntry) {
         self.list.append(item)
-    }
-    
-    func addToFavorite(food: FoodEntry) {
-        self.favorite.append(food)
     }
     
     func removeFood(name: String) {

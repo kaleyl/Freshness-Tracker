@@ -9,17 +9,42 @@
 import UIKit
 import SearchTextField
 
-class AddEntryViewController: UIViewController{
-    
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        //, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate 
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        <#code#>
-//    }
+class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1 //number of wheel in each pickerview
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch PickerViewTag(rawValue: pickerView.tag) {
+            case .ExpiryType:
+                print("Expiry Type")
+                return expiryTypes.count
+            default:
+                 print("Time Unit")
+                return timeUnits.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch PickerViewTag(rawValue: pickerView.tag) {
+            case .ExpiryType:
+                return expiryTypes[row] //dropdown item
+            default:
+                return timeUnits[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         //selected item, update textField
+        switch PickerViewTag(rawValue: pickerView.tag) {
+            case .ExpiryType:
+                expiryText.text = expiryTypes[row]
+            default:
+                timeUnitText.text = timeUnits[row]
+        }
+    }
     
     @IBOutlet weak var photoView: UIImageView!
     
@@ -27,7 +52,11 @@ class AddEntryViewController: UIViewController{
     
     @IBOutlet weak var nameText: SearchTextField!
     
+    @IBOutlet weak var expiryText: UITextField!
+    
     @IBOutlet weak var dateText: UITextField!
+    
+    @IBOutlet weak var timeUnitText: UITextField!
     
     @IBOutlet weak var estimateLabel1: UILabel!
     
@@ -38,6 +67,19 @@ class AddEntryViewController: UIViewController{
     private var datePicker: UIDatePicker!
     
     private var imagePickerController: UIImagePickerController!
+    
+    private var expiryPicker: UIPickerView!
+    
+    private var unitPicker: UIPickerView!
+    
+    private var expiryTypes: [String] = ["Best Before Date","Production Date","No Date Available"]
+    
+    private var timeUnits: [String] = ["days","months","years"]
+    
+    enum PickerViewTag: Int{
+        case ExpiryType
+        case TimeUnit
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +95,14 @@ class AddEntryViewController: UIViewController{
         //set up image picker
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
+        
+        //set exipry date picker view
+        self.expiryPicker = UIPickerView()
+        createPickerView(pickerView: self.expiryPicker, textField: expiryText, tag:.ExpiryType)
+        
+        //set time unit picker view
+        self.unitPicker = UIPickerView()
+        createPickerView(pickerView: self.unitPicker, textField: timeUnitText,tag:.TimeUnit)
         
         //Autocomplete UITextField
         /*
@@ -82,7 +132,7 @@ class AddEntryViewController: UIViewController{
         toolbar.sizeToFit()
         
         //bar Done button
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneBtnPressed))
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBtnPressed))
         toolbar.setItems([doneBtn], animated: true)
         
         //assign toolbar
@@ -93,7 +143,7 @@ class AddEntryViewController: UIViewController{
         
     }
     
-    @objc func doneBtnPressed(){
+    @objc func dateDoneBtnPressed(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dateText.text = dateFormatter.string(from: datePicker.date)
@@ -103,6 +153,32 @@ class AddEntryViewController: UIViewController{
         
         //update the estimated days left
         updateDaysLeft()
+    }
+    
+    /*
+     credit to:
+     https://medium.com/@raj.amsarajm93/create-dropdown-using-uipickerview-4471e5c7d898
+     */
+    func createPickerView(pickerView: UIPickerView, textField:UITextField, tag:PickerViewTag){
+        pickerView.delegate = self
+        pickerView.tag = tag.rawValue
+        
+        //create toolboar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+       
+        //bar Done button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(pickerDoneBtnPressed))
+        toolbar.setItems([doneBtn], animated: true)
+               
+        //assign toolbar
+        textField.inputAccessoryView = toolbar
+        //bind date picker to text field
+        textField.inputView = pickerView
+    }
+    
+    @objc func pickerDoneBtnPressed() {
+          view.endEditing(true)
     }
     
     func updateDaysLeft(){
