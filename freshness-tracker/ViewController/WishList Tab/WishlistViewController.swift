@@ -95,7 +95,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             }
             self.wishlistTable.reloadData()
         }
-        let ckearAllAction = UIAlertAction(title: "Clear All", style: .destructive) { (action) in
+        let clearAllAction = UIAlertAction(title: "Clear All", style: .destructive) { (action) in
             appData.list = []
             self.wishlistTable.reloadData()
         }
@@ -106,7 +106,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         }
              
         alert.addAction(clearCompletedAction)
-        alert.addAction(ckearAllAction)
+        alert.addAction(clearAllAction)
         alert.addAction(cancelAction)
              
         present(alert, animated: true, completion: nil)
@@ -131,10 +131,11 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             fetchWishListData(completion:{ result in
                 if(result){
                    print("Wish list data fetched successfully")
+                    appData.sortItems()
                    self.wishlistTable.reloadData()
                    print("reload sucessful")
                 }else{
-                    print("Fail to fetch wish list data from firebase")
+                   print("Fail to fetch wish list data from firebase")
                 }
             })
         }

@@ -108,9 +108,9 @@ class AppData {
     }
     
     func addListEntry(item: ListEntry) {
-        self.list.append(item)
-        
-        print("add list")
+        if !self.list.contains(where: {$0.name == item.name}){
+            self.list.append(item)
+            print("add list")
         
         //add to firebase
         var ref: DocumentReference? = nil
@@ -125,6 +125,9 @@ class AppData {
                         print("Wish List added with ID: \(ref!.documentID)")
                     }
                 }
+        } else {
+            print("Item already in wish list")
+        }
     }
     
     func removeFood(name: String) {
