@@ -1,4 +1,4 @@
-framework module Pods_freshness_tracker_freshness_trackerUITests {
+module Pods_freshness_tracker_freshness_trackerUITests {
   umbrella header "Pods-freshness-tracker-freshness-trackerUITests-umbrella.h"
 
   export *

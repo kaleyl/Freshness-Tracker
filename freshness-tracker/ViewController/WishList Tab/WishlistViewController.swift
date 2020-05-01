@@ -73,7 +73,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         if let itemName = addTextField.text {
             if itemName != "" {
                 let item = ListEntry(name: itemName, checked: false)
-                appData.list.append(item)
+                appData.addListEntry(item: item)
                 appData.sortItems()
             }
         }
@@ -120,6 +120,28 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
+        
+        //set up gesture
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        //firebase content
+        if(appData.ifListEmpty()){
+            fetchWishListData(completion:{ result in
+                if(result){
+                   print("Wish list data fetched successfully")
+                   self.wishlistTable.reloadData()
+                   print("reload sucessful")
+                }else{
+                    print("Fail to fetch wish list data from firebase")
+                }
+            })
+        }
+    }
+    
+    @objc func didTapView(){
+      self.view.endEditing(true)
     }
     
 }

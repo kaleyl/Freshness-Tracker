@@ -14,19 +14,30 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var TrackerTableView: UITableView!
     
     @IBOutlet weak var sortButton: UIButton!
-   
+           
     override func viewDidLoad() {
         super.viewDidLoad()
         TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
-        // Do any additional setup after loading the view.
+    
+        //Firebase content
+        if(appData.ifTrackerEmpty()){
+            fetchTrackerData(completion:{ result in
+                if(result){
+                    print("Tracker data fetched successfully")
+                    self.TrackerTableView.reloadData()
+                    print("reload sucessful")
+                }else{
+                    print("Fail to fetch tracker data from firebase")
+                }
+            })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         TrackerTableView.reloadData()
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return appData.tracker.count

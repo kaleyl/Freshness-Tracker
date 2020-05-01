@@ -1,4 +1,4 @@
-framework module SearchTextField {
+module SearchTextField {
   umbrella header "SearchTextField-umbrella.h"
 
   export *
