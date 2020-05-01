@@ -92,15 +92,15 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set up gesture
-        let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: #selector(didTapView))
-        self.view.addGestureRecognizer(tapRecognizer)
+        //set up text field UI
+        setTextFieldBorder(textField: nameText)
+        setTextFieldBorder(textField: dateText)
+        setTextFieldBorder(textField: shelfLifeText)
         
         //set up image picker
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
-        
+    
         //Autocomplete UITextField
         /*
             Credit to:
@@ -132,6 +132,11 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         estimateLabel1.isHidden = true
         estimateLabel2.isHidden = true
         
+        //set up gesture
+               let tapRecognizer = UITapGestureRecognizer()
+               tapRecognizer.addTarget(self, action: #selector(didTapView))
+               self.view.addGestureRecognizer(tapRecognizer)
+        
         /*
              move up view while typing using keyboard
              credit to:
@@ -159,6 +164,15 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    func setTextFieldBorder(textField:UITextField){
+        let nameTextLine = CALayer()
+        nameTextLine.frame = CGRect(x: 0.0, y: textField.frame.height - 5, width: textField.frame.width, height: 1.0)
+        nameTextLine.backgroundColor = UIColor(named:"LighterGray")!.cgColor
+        textField.borderStyle = UITextField.BorderStyle.none
+        textField.layer.addSublayer(nameTextLine)
+        
     }
     
     @IBAction func photoBtnPressed(_ sender: Any) {
