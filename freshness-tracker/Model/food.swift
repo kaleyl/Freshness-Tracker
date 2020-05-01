@@ -66,7 +66,7 @@ class AppData {
         
         //wish list
         let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
-        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: true)
+        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: false)
         
         self.list.append(freshMilk)
         self.list.append(pineappleSausage)

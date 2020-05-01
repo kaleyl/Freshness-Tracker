@@ -90,6 +90,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             //action here
             let newItem = ListEntry(name: selectedFood.name, checked: false)
             appData.addListEntry(item: newItem)
+            appData.sortItems()
             success(true)
         })
         AddAction.backgroundColor = .orange

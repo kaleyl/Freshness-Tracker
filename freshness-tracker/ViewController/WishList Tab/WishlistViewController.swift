@@ -86,7 +86,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         message: "", preferredStyle: .actionSheet)
         
         
-        let clearCompletedAction = UIAlertAction(title: "Clear Completed",style: .default
+        let clearCompletedAction = UIAlertAction(title: "Clear Completed",style: .destructive
         ) { (action) in
             for item in appData.list {
                 if item.checked {
@@ -95,7 +95,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             }
             self.wishlistTable.reloadData()
         }
-        let ckearAllAction = UIAlertAction(title: "Clear All", style: .default) { (action) in
+        let ckearAllAction = UIAlertAction(title: "Clear All", style: .destructive) { (action) in
             appData.list = []
             self.wishlistTable.reloadData()
         }
