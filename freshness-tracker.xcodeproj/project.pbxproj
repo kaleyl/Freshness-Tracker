@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EE360A5B7CAA3100C8C711B /* libPods-freshness-tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 657E8C1C1AD01887E8A1500A /* libPods-freshness-tracker.a */; };
 		4B556AB0245116CD00FA006D /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B556AAF245116CD00FA006D /* UIExtension.swift */; };
 		4BCB136D244D802A00C3CCAD /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1367244D802A00C3CCAD /* NunitoSans-SemiBold.ttf */; };
 		4BCB136E244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1368244D802A00C3CCAD /* NunitoSans-ExtraBold.ttf */; };
@@ -17,8 +18,7 @@
 		4BCB1375244D816500C3CCAD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */; };
 		4BCB1376244D816500C3CCAD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */; };
 		4BE27D53245C8C6A0011CDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE27D52245C8C6A0011CDCD /* GoogleService-Info.plist */; };
-		5DC2960443744D4394B56544 /* Pods_freshness_trackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6F3F5BF7604498B692120D /* Pods_freshness_trackerTests.framework */; };
-		7AC98321F7D2BBFE1AACEEC0 /* Pods_freshness_tracker_freshness_trackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AA298AE52C643C6A4BF891 /* Pods_freshness_tracker_freshness_trackerUITests.framework */; };
+		9E4C15FE3154DA946FDF687B /* libPods-freshness-tracker-freshness-trackerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA36055039086C77CDD35351 /* libPods-freshness-tracker-freshness-trackerUITests.a */; };
 		DF6953B3244C8CD500785725 /* WishListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6953B2244C8CD500785725 /* WishListItemCell.swift */; };
 		DF6953B5244EB14100785725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6953B4244EB14100785725 /* LaunchScreen.storyboard */; };
 		DF9B2CCF2440224C006D7ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B2CCE2440224C006D7ED7 /* Main.storyboard */; };
@@ -33,7 +33,7 @@
 		DFB93465243F0F530031D4E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB93464243F0F530031D4E1 /* Preview Assets.xcassets */; };
 		DFB93473243F0F530031D4E1 /* freshness_trackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB93472243F0F530031D4E1 /* freshness_trackerTests.swift */; };
 		DFB9347E243F0F530031D4E1 /* freshness_trackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB9347D243F0F530031D4E1 /* freshness_trackerUITests.swift */; };
-		EB83A4D22104E986ED915DDE /* Pods_freshness_tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BD1FDF19FB5AAC2C1258C /* Pods_freshness_tracker.framework */; };
+		EBC1234D6D55D9EA28FCC9D2 /* libPods-freshness-trackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F53E22CC772F1487D67B365C /* libPods-freshness-trackerTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,11 @@
 		4BCB1373244D816500C3CCAD /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "fonts/Comfortaa/Comfortaa-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		4BCB1374244D816500C3CCAD /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Bold.ttf"; path = "fonts/Comfortaa/Comfortaa-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		4BE27D52245C8C6A0011CDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5F6F3F5BF7604498B692120D /* Pods_freshness_trackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freshness_trackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		657E8C1C1AD01887E8A1500A /* libPods-freshness-tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-freshness-tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9D99BC088D4FA4912150EE /* Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig"; path = "Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		901F27FA036ECE3F0CECC7AD /* Pods-freshness-tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker.debug.xcconfig"; path = "Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		9827C073158A19FDCE41D1C4 /* Pods-freshness-tracker-freshness-trackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker-freshness-trackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD775B84C8B32803E1AFD461 /* Pods-freshness-trackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-trackerTests.release.xcconfig"; path = "Target Support Files/Pods-freshness-trackerTests/Pods-freshness-trackerTests.release.xcconfig"; sourceTree = "<group>"; };
-		BF1BD1FDF19FB5AAC2C1258C /* Pods_freshness_tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freshness_tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6953B2244C8CD500785725 /* WishListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemCell.swift; sourceTree = "<group>"; };
 		DF6953B4244EB14100785725 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF9B2CCE2440224C006D7ED7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -90,9 +89,10 @@
 		DFB93479243F0F530031D4E1 /* freshness-trackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "freshness-trackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB9347D243F0F530031D4E1 /* freshness_trackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freshness_trackerUITests.swift; sourceTree = "<group>"; };
 		DFB9347F243F0F530031D4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9AA298AE52C643C6A4BF891 /* Pods_freshness_tracker_freshness_trackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freshness_tracker_freshness_trackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5662C802C6E015BBBA76A7 /* Pods-freshness-trackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-trackerTests.debug.xcconfig"; path = "Target Support Files/Pods-freshness-trackerTests/Pods-freshness-trackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE5DDABCB15A3C332AB46B17 /* Pods-freshness-tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freshness-tracker.release.xcconfig"; path = "Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker.release.xcconfig"; sourceTree = "<group>"; };
+		F53E22CC772F1487D67B365C /* libPods-freshness-trackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-freshness-trackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA36055039086C77CDD35351 /* libPods-freshness-tracker-freshness-trackerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-freshness-tracker-freshness-trackerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB83A4D22104E986ED915DDE /* Pods_freshness_tracker.framework in Frameworks */,
+				0EE360A5B7CAA3100C8C711B /* libPods-freshness-tracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DC2960443744D4394B56544 /* Pods_freshness_trackerTests.framework in Frameworks */,
+				EBC1234D6D55D9EA28FCC9D2 /* libPods-freshness-trackerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC98321F7D2BBFE1AACEEC0 /* Pods_freshness_tracker_freshness_trackerUITests.framework in Frameworks */,
+				9E4C15FE3154DA946FDF687B /* libPods-freshness-tracker-freshness-trackerUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +149,9 @@
 		A2D6453F2229859A7CFCC8BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF1BD1FDF19FB5AAC2C1258C /* Pods_freshness_tracker.framework */,
-				E9AA298AE52C643C6A4BF891 /* Pods_freshness_tracker_freshness_trackerUITests.framework */,
-				5F6F3F5BF7604498B692120D /* Pods_freshness_trackerTests.framework */,
+				657E8C1C1AD01887E8A1500A /* libPods-freshness-tracker.a */,
+				FA36055039086C77CDD35351 /* libPods-freshness-tracker-freshness-trackerUITests.a */,
+				F53E22CC772F1487D67B365C /* libPods-freshness-trackerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				DFB93454243F0F520031D4E1 /* Sources */,
 				DFB93455243F0F520031D4E1 /* Frameworks */,
 				DFB93456243F0F520031D4E1 /* Resources */,
-				C23D6474F78BD696B36D07EA /* [CP] Embed Pods Frameworks */,
+				3228143F04D80ADEF69ABF95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,7 +329,7 @@
 				DFB93475243F0F530031D4E1 /* Sources */,
 				DFB93476243F0F530031D4E1 /* Frameworks */,
 				DFB93477243F0F530031D4E1 /* Resources */,
-				DD56E89756C5FC32BAF09EE0 /* [CP] Embed Pods Frameworks */,
+				A20C1FB3F67BC1BDA8268424 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -444,6 +444,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3228143F04D80ADEF69ABF95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B0D376F0C69A900EB322F71 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,6 +483,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A20C1FB3F67BC1BDA8268424 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B28FB7BBC4BB035935E01606 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,40 +520,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C23D6474F78BD696B36D07EA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker/Pods-freshness-tracker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD56E89756C5FC32BAF09EE0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freshness-tracker-freshness-trackerUITests/Pods-freshness-tracker-freshness-trackerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -693,6 +693,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"freshness-tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 2PQS3RJGUW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "freshness-tracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -713,6 +714,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"freshness-tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 2PQS3RJGUW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "freshness-tracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

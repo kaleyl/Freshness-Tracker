@@ -14,6 +14,11 @@ import Firebase
 var appData = AppData()
 let db = Firestore.firestore()
 let storage = Storage.storage()
+let dateFormatter : DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM/dd/yyyy"
+    return formatter
+}()
 
 struct FoodEntry {
     var name: String
@@ -41,12 +46,14 @@ class AppData {
         //add some dummies
         //tracker list
         let date = Date()
-        var components = DateComponents()
-        components.setValue(1, for: .month)
+        var componentsEgg = DateComponents()
+        componentsEgg.setValue(1, for: .month)
+        var componentsMilk = DateComponents()
+        componentsMilk.setValue(3, for: .day)
       
         let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date(), dateAdded: Date())
-        let bread = FoodEntry(name: "Bread", image: UIImage(named: "food"), expireDate:Calendar.current.date(byAdding: components, to: date)!, dateAdded: Date())
-        let orange = FoodEntry(name: "Orange", image: UIImage(named: "food"), expireDate: Date(), dateAdded: Date())
+        let bread = FoodEntry(name: "Egg", image: UIImage(named: "egg"), expireDate:Calendar.current.date(byAdding: componentsEgg, to: date)!, dateAdded: Date())
+        let orange = FoodEntry(name: "Milk", image: UIImage(named: "milk"), expireDate: Calendar.current.date(byAdding: componentsMilk, to: date)!, dateAdded: Date())
        
         
         self.tracker.append(apple)
@@ -74,6 +81,30 @@ class AppData {
         }
         
         //add to firebase
+        let imageID = UUID.init().uuidString
+        let expireDate = dateFormatter.string(from: food.expireDate)
+        let dateAdded = dateFormatter.string(from: food.dateAdded)
+        
+        let storageRef = storage.reference(withPath: "\(imageID).jpg")
+        guard let imageData = food.image!.jpegData(compressionQuality: 0.75) else {return}
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        storageRef.putData(imageData)
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("tracker")
+        .addDocument(data: [
+            "name":food.name,
+            "imageID": imageID,
+            "expireDate":expireDate,
+            "dateAdded":dateAdded
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Tracker added with ID: \(ref!.documentID)")
+            }
+        }
     }
     
     func addListEntry(item: ListEntry) {
@@ -82,19 +113,16 @@ class AppData {
         print("add list")
         
         //add to firebase
-        let name = item.name
-        let checked = item.checked
-
         var ref: DocumentReference? = nil
         ref = db.collection("wishList")
             .addDocument(data:[
-                "name": name,
-                "checked": checked]) { err in
+                "name": item.name,
+                "checked": item.checked]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
 
                     } else {
-                        print("Document added with ID: \(ref!.documentID)")
+                        print("Wish List added with ID: \(ref!.documentID)")
                     }
                 }
     }
@@ -106,6 +134,14 @@ class AppData {
                 return
             }
         }
+    }
+    
+    func ifTrackerEmpty() -> Bool{
+        return self.tracker.count == 3
+    }
+    
+    func ifListEmpty() -> Bool{
+        return self.list.count == 2
     }
     
     func removeItem(name: String) {
@@ -179,14 +215,48 @@ func sortDateAdded(this: FoodEntry, that: FoodEntry) -> Bool {
     return this.dateAdded < that.dateAdded
 }
 
-func fetchTrackerData(){
-    
+func fetchTrackerData(completion: @escaping(Bool)->()){
+   db.collection("tracker").getDocuments(){
+       (foods, err) in if let _ = err {
+           completion(false)
+       }else{
+            for food in foods!.documents {
+                let name = food.data()["name"] as! String
+                let imageID = food.data()["imageID"] as! String
+                let expireDateStr = food.data()["expireDate"] as! String
+                let addedDateStr = food.data()["dateAdded"] as! String
+            
+                let expireDate = dateFormatter.date(from: expireDateStr)!
+                let dateAdded = dateFormatter.date(from: addedDateStr)!
+            
+                let storageRef = storage.reference(withPath: "\(imageID).jpg")
+                storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                    if error != nil {
+                        print("Fail to fetch tracker image from firebase storage")
+                    }else{
+                       
+                        print("fetching data")
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            appData.tracker.append(FoodEntry(name: name, image: image, expireDate: expireDate, dateAdded: dateAdded))
+                            if(!appData.record.contains(name)){
+                            appData.record.append(name)
+                            }
+                        }
+                         completion(true)
+                    }
+                }
+            }
+        
+        
+      }
+   }
 }
 
-func fetchWishListData(){
+func fetchWishListData(completion: @escaping(Bool)->()){
     db.collection("wishList").getDocuments(){
-        (items, err) in if let err = err{
-            print("Error getting documents: \(err)")
+        (items, err) in if let _ = err {
+            completion(false)
         }else{
             for item in items!.documents {
                 let name = item.data()["name"] as! String
@@ -194,6 +264,7 @@ func fetchWishListData(){
                 
                 appData.list.append(ListEntry(name: name,checked: checked))
             }
+            completion(true)
         }
     }
 }

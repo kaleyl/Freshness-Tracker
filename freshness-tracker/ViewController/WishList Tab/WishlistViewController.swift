@@ -120,6 +120,19 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
+        
+        //firebase content
+        if(appData.ifListEmpty()){
+            fetchWishListData(completion:{ result in
+                if(result){
+                   print("Wish list data fetched successfully")
+                   self.wishlistTable.reloadData()
+                   print("reload sucessful")
+                }else{
+                    print("Fail to fetch wish list data from firebase")
+                }
+            })
+        }
     }
     
 }

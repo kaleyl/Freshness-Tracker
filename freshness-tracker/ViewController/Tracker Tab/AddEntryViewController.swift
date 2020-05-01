@@ -159,8 +159,6 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     
     @objc func dateDoneBtnPressed(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
         dateText.text = dateFormatter.string(from: datePicker.date)
         
         //dismiss the date picker after select date

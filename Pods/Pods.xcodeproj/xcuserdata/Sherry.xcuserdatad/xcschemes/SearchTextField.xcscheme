@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8C3F94412D7198255213EB9BC85FFF6E"
-               BuildableName = "SearchTextField.framework"
+               BuildableName = "libSearchTextField.a"
                BlueprintName = "SearchTextField"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
