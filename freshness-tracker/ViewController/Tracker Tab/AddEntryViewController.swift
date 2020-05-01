@@ -171,11 +171,7 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             updateDaysLeft()
         }
     }
-    
-    /*
-     credit to:
-     https://medium.com/@raj.amsarajm93/create-dropdown-using-uipickerview-4471e5c7d898
-     */
+
     func createPickerView(pickerView: UIPickerView, textField:UITextField, tag:PickerViewTag){
         pickerView.delegate = self
         pickerView.tag = tag.rawValue

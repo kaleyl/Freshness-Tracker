@@ -73,7 +73,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         if let itemName = addTextField.text {
             if itemName != "" {
                 let item = ListEntry(name: itemName, checked: false)
-                appData.list.append(item)
+                appData.addListEntry(item: item)
                 appData.sortItems()
             }
         }

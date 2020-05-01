@@ -14,13 +14,15 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var TrackerTableView: UITableView!
     
     @IBOutlet weak var sortButton: UIButton!
-   
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
         // Do any additional setup after loading the view.
+        //Firebase content
+        fetchWishListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

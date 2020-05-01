@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 //global instance
 var appData = AppData()
+let db = Firestore.firestore()
+let storage = Storage.storage()
 
 struct FoodEntry {
     var name: String
@@ -63,15 +66,37 @@ class AppData {
     }
  
     func addFoodEntry(food: FoodEntry) {
+        print("add food")
         self.tracker.append(food)
         //check if already contains name
         if(!self.record.contains(food.name)){
             self.record.append(food.name)
         }
+        
+        //add to firebase
     }
     
     func addListEntry(item: ListEntry) {
         self.list.append(item)
+        
+        print("add list")
+        
+        //add to firebase
+        let name = item.name
+        let checked = item.checked
+
+        var ref: DocumentReference? = nil
+        ref = db.collection("wishList")
+            .addDocument(data:[
+                "name": name,
+                "checked": checked]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
     }
     
     func removeFood(name: String) {
@@ -152,4 +177,23 @@ func sortExpireDate(this: FoodEntry, that: FoodEntry) -> Bool {
 
 func sortDateAdded(this: FoodEntry, that: FoodEntry) -> Bool {
     return this.dateAdded < that.dateAdded
+}
+
+func fetchTrackerData(){
+    
+}
+
+func fetchWishListData(){
+    db.collection("wishList").getDocuments(){
+        (items, err) in if let err = err{
+            print("Error getting documents: \(err)")
+        }else{
+            for item in items!.documents {
+                let name = item.data()["name"] as! String
+                let checked = item.data()["checked"] as! Bool
+                
+                appData.list.append(ListEntry(name: name,checked: checked))
+            }
+        }
+    }
 }
