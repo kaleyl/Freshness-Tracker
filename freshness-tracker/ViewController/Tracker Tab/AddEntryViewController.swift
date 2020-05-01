@@ -92,6 +92,11 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set up gesture
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
         //set up image picker
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
@@ -126,7 +131,34 @@ class AddEntryViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         //make estimatealabel invisible
         estimateLabel1.isHidden = true
         estimateLabel2.isHidden = true
+        
+        /*
+             move up view while typing using keyboard
+             credit to:
+          https://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
+                         
+        */
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
+    }
+    
+    @objc func didTapView(){
+      self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @IBAction func photoBtnPressed(_ sender: Any) {

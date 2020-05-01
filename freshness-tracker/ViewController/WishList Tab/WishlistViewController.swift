@@ -121,6 +121,11 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
         
+        //set up gesture
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
         //firebase content
         if(appData.ifListEmpty()){
             fetchWishListData(completion:{ result in
@@ -133,6 +138,10 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         }
+    }
+    
+    @objc func didTapView(){
+      self.view.endEditing(true)
     }
     
 }
