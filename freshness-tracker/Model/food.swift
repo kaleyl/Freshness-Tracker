@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 //global instance
 var appData = AppData()
+let db = Firestore.firestore()
+let storage = Storage.storage()
 
 struct FoodEntry {
     var name: String
@@ -28,13 +31,11 @@ struct ListEntry {
 class AppData {
     var tracker: [FoodEntry]
     var list: [ListEntry]
-    var favorite : [FoodEntry]
     var record: [String]
     
     init() {
         self.tracker = []
         self.list = []
-        self.favorite = []
         self.record = [] //used for autocomplete
         
         //add some dummies
@@ -65,19 +66,37 @@ class AppData {
     }
  
     func addFoodEntry(food: FoodEntry) {
+        print("add food")
         self.tracker.append(food)
         //check if already contains name
         if(!self.record.contains(food.name)){
             self.record.append(food.name)
         }
+        
+        //add to firebase
     }
     
     func addListEntry(item: ListEntry) {
         self.list.append(item)
-    }
-    
-    func addToFavorite(food: FoodEntry) {
-        self.favorite.append(food)
+        
+        print("add list")
+        
+        //add to firebase
+        let name = item.name
+        let checked = item.checked
+
+        var ref: DocumentReference? = nil
+        ref = db.collection("wishList")
+            .addDocument(data:[
+                "name": name,
+                "checked": checked]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+                }
     }
     
     func removeFood(name: String) {
@@ -98,6 +117,16 @@ class AppData {
         }
     }
     
+    func sortItems() {
+        appData.list.sort{
+            if ($0.checked != $1.checked) {
+                return !$0.checked && $1.checked
+            } else {
+                return $0.name < $1.name
+            }
+        }
+    }
+    
     func changeItemStatus(name: String) {
         for (index, item) in list.enumerated() {
             if (item.name == name) {
@@ -105,10 +134,12 @@ class AppData {
                     list.remove(at: index)
                     let unchekedItem = ListEntry(name: name, checked: false)
                     list.append(unchekedItem)
+                    self.sortItems()
                 } else {
                     list.remove(at: index)
                     let checkedItem = ListEntry(name: name, checked: true)
                     list.append(checkedItem)
+                    self.sortItems()
                 }
             }
         }
@@ -146,4 +177,23 @@ func sortExpireDate(this: FoodEntry, that: FoodEntry) -> Bool {
 
 func sortDateAdded(this: FoodEntry, that: FoodEntry) -> Bool {
     return this.dateAdded < that.dateAdded
+}
+
+func fetchTrackerData(){
+    
+}
+
+func fetchWishListData(){
+    db.collection("wishList").getDocuments(){
+        (items, err) in if let err = err{
+            print("Error getting documents: \(err)")
+        }else{
+            for item in items!.documents {
+                let name = item.data()["name"] as! String
+                let checked = item.data()["checked"] as! Bool
+                
+                appData.list.append(ListEntry(name: name,checked: checked))
+            }
+        }
+    }
 }

@@ -14,13 +14,15 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var TrackerTableView: UITableView!
     
     @IBOutlet weak var sortButton: UIButton!
-   
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
         // Do any additional setup after loading the view.
+        //Firebase content
+        fetchWishListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,21 +90,6 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         return UISwipeActionsConfiguration(actions: [TrashAction,AddAction])
     }
-    
-    func tableView(_ tableView: UITableView,
-                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-    
-        let selectedFood = appData.tracker[indexPath.item]
-        let favoriteAction = UIContextualAction(style: .normal, title:  "favorite", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            let selectedFood = appData.tracker[indexPath.item]
-            appData.addToFavorite(food: selectedFood)
-            success(true)
-        })
-        favoriteAction.backgroundColor = .systemYellow
-        favoriteAction.image = UIImage(systemName: "star.fill")
-        return UISwipeActionsConfiguration(actions: [favoriteAction])
-    }
-    
     
     @IBAction func sortButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Sort items by:",
