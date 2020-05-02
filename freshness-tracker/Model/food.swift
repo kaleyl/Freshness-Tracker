@@ -20,6 +20,7 @@ let dateFormatter : DateFormatter = {
     return formatter
 }()
 
+
 struct FoodEntry {
     var name: String
     var image: UIImage?
@@ -37,11 +38,13 @@ class AppData {
     var tracker: [FoodEntry]
     var list: [ListEntry]
     var record: [String]
+    var category : [String]
     
     init() {
         self.tracker = []
         self.list = []
         self.record = [] //used for autocomplete
+        self.category = []
         
         //add some dummies
         //tracker list

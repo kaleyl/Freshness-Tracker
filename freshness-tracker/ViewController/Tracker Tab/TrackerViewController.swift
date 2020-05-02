@@ -8,19 +8,25 @@
 
 import UIKit
 
-class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
-    
     @IBOutlet weak var TrackerTableView: UITableView!
     
     @IBOutlet weak var sortButton: UIButton!
            
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var filteredFood: [FoodEntry] = []
+    
+    var isFiltering : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
-    
+        searchBar.delegate = self
+        
         //Firebase content
         if(appData.ifTrackerEmpty()){
             fetchTrackerData(completion:{ result in
@@ -40,13 +46,20 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredFood.count
+        }
          return appData.tracker.count
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath) as? FoodEntryCell {
             // configure cell
-            let currentFood = appData.tracker[indexPath.row]
+            var currentFood = appData.tracker[indexPath.row]
+            
+            if isFiltering && filteredFood.count != 0 {
+                currentFood = filteredFood[indexPath.row]
+            }
             
             if let image = currentFood.image {
                 cell.imageLabel.image = image
@@ -127,4 +140,34 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         present(alert, animated: true, completion: nil)
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isFiltering = false
+        viewWillAppear(false)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isFiltering = false
+        viewWillAppear(false)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredFood = []
+        if searchText == "" {
+            isFiltering = false
+            viewWillAppear(false)
+            return
+        }
+        for entry in appData.tracker {
+           if entry.name.contains(searchText) {
+               filteredFood.append(entry)
+           }
+       }
+       isFiltering = true
+        
+       viewWillAppear(false)
+    
+    }
+
 }
+
+
