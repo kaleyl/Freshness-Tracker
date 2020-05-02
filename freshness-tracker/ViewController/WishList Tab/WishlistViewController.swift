@@ -12,8 +12,6 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var wishlistTable: UITableView!
     
-    @IBOutlet weak var wishlistAdd: UIButton!
-    
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var addTextField: UITextField!
