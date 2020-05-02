@@ -48,31 +48,31 @@ class AppData {
         
         //add some dummies
         //tracker list
-        let date = Date()
-        var componentsEgg = DateComponents()
-        componentsEgg.setValue(1, for: .month)
-        var componentsMilk = DateComponents()
-        componentsMilk.setValue(3, for: .day)
-      
-        let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date(), dateAdded: Date())
-        let bread = FoodEntry(name: "Egg", image: UIImage(named: "egg"), expireDate:Calendar.current.date(byAdding: componentsEgg, to: date)!, dateAdded: Date())
-        let orange = FoodEntry(name: "Milk", image: UIImage(named: "milk"), expireDate: Calendar.current.date(byAdding: componentsMilk, to: date)!, dateAdded: Date())
-       
+//        let date = Date()
+//        var componentsEgg = DateComponents()
+//        componentsEgg.setValue(1, for: .month)
+//        var componentsMilk = DateComponents()
+//        componentsMilk.setValue(3, for: .day)
+//
+//        let apple = FoodEntry(name: "Apple", image: UIImage(named: "apple"), expireDate: Date(), dateAdded: Date())
+//        let bread = FoodEntry(name: "Egg", image: UIImage(named: "egg"), expireDate:Calendar.current.date(byAdding: componentsEgg, to: date)!, dateAdded: Date())
+//        let orange = FoodEntry(name: "Milk", image: UIImage(named: "milk"), expireDate: Calendar.current.date(byAdding: componentsMilk, to: date)!, dateAdded: Date())
+//
+//
+//        self.tracker.append(apple)
+//        self.tracker.append(bread)
+//        self.tracker.append(orange)
+//
+//        self.record.append(apple.name)
+//        self.record.append(bread.name)
+//        self.record.append(orange.name)
         
-        self.tracker.append(apple)
-        self.tracker.append(bread)
-        self.tracker.append(orange)
-        
-        self.record.append(apple.name)
-        self.record.append(bread.name)
-        self.record.append(orange.name)
-        
-        //wish list
-        let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
-        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: false)
-        
-        self.list.append(freshMilk)
-        self.list.append(pineappleSausage)
+        //wish list dummies
+//        let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
+//        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: false)
+//
+//        self.list.append(freshMilk)
+//        self.list.append(pineappleSausage)
     }
  
     func addFoodEntry(food: FoodEntry) {
@@ -135,12 +135,31 @@ class AppData {
         for (index, food) in tracker.enumerated() {
             if (food.name == name) {
                 tracker.remove(at: index)
-                //remove from firebase
-                db.collection("tracker").document(food.name).delete() { err in
-                    if let err = err {
-                        print("Error removing document: \(err)")
+                let docRef = db.collection("tracker").document(food.name)
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let imageID = document.data()!["imageID"] as! String
+                        print("Get image id for \(food.name)")
+                        let storageRef = storage.reference(withPath: "\(imageID).jpg")
+                        //Removes image from storage
+                        storageRef.delete { error in
+                            if let error = error {
+                                print(error)
+                            } else {
+                                print("Image deleted from storage")
+                                
+                                 //remove from firebase
+                                docRef.delete() { err in
+                                     if let err = err {
+                                         print("Error removing document: \(err)")
+                                     } else {
+                                         print("\(food.name) successfully removed from tracker!")
+                                     }
+                                 }
+                            }
+                        }
                     } else {
-                        print("Tracker \(food.name) successfully removed!")
+                        print("Document does not exist")
                     }
                 }
                 return
@@ -149,11 +168,11 @@ class AppData {
     }
     
     func ifTrackerEmpty() -> Bool{
-        return self.tracker.count == 3
+        return self.tracker.count == 0
     }
     
     func ifListEmpty() -> Bool{
-        return self.list.count == 2
+        return self.list.count == 0
     }
     
     func removeItem(name: String) {
