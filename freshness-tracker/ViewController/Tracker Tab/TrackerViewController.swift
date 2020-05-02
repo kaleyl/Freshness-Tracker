@@ -20,6 +20,8 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         TrackerTableView.rowHeight = 100
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
+        
+        UITabBar.appearance().tintColor = UIColor(named: "TrackGreen")!
     
         //Firebase content
         if(appData.ifTrackerEmpty()){

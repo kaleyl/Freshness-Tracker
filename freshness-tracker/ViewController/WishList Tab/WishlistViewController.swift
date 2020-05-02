@@ -121,6 +121,8 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
         
+        UITabBar.appearance().tintColor = UIColor(named: "WishListOrange")!
+        
         //set up gesture
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(didTapView))

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Alo-gq-cVO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
         <!--addEntry View Controller-->
         <scene sceneID="4ot-EG-DvG">
             <objects>
-                <viewController title="addEntry View Controller" id="P3h-U9-ujH" customClass="AddEntryViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="addEntry View Controller" id="P3h-U9-ujH" customClass="AddEntryViewController" customModule="Freshness_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KcS-lk-A5V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="continue"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-El-a1f" userLabel="DateInput">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-El-a1f" userLabel="DateInput">
                                 <rect key="frame" x="164" y="573" width="96" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -192,7 +192,7 @@
         <!--Tracker View Controller-->
         <scene sceneID="aGV-ya-Yu3">
             <objects>
-                <viewController title="Tracker View Controller" id="klR-AG-ofL" customClass="TrackerViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tracker View Controller" id="klR-AG-ofL" customClass="TrackerViewController" customModule="Freshness_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hBP-rg-gcg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,10 +210,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="110" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="110" id="vmw-ep-uJN" customClass="FoodEntryCell" customModule="Freshness_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmw-ep-uJN" id="3pS-g2-hHd" customClass="FoodEntryCell" customModule="freshness_tracker" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmw-ep-uJN" id="3pS-g2-hHd" customClass="FoodEntryCell" customModule="Freshness_Tracker" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -287,7 +287,7 @@
         <!--WishList View Controller-->
         <scene sceneID="TNd-BD-Biu">
             <objects>
-                <viewController title="WishList View Controller" id="a5K-rL-E3d" customClass="WishlistViewController" customModule="freshness_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WishList View Controller" id="a5K-rL-E3d" customClass="WishlistViewController" customModule="Freshness_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNw-6j-9bM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,7 +297,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistCell" rowHeight="55" id="2mu-74-UDj" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishlistCell" rowHeight="55" id="2mu-74-UDj" customClass="WishListItemCell" customModule="Freshness_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2mu-74-UDj" id="TTO-yz-pCI">
@@ -328,7 +328,7 @@
                                             <outlet property="itemLabel" destination="gUm-4m-X94" id="Tra-Kd-loI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="i3J-9J-Nbn" customClass="WishListItemCell" customModule="freshness_tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="i3J-9J-Nbn" customClass="WishListItemCell" customModule="Freshness_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="83" width="382" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i3J-9J-Nbn" id="TP6-xq-wTC">
@@ -386,7 +386,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="u1u-4Q-W7N"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="WishLsit" image="cart.fill" catalog="system" id="Npb-QI-ibv"/>
+                    <tabBarItem key="tabBarItem" title="WishLsit" image="cart.fill" catalog="system" id="Npb-QI-ibv">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="WishListOrange"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="addButton" destination="m9W-b2-ZcR" id="6Ll-Zr-8qQ"/>
                         <outlet property="addTextField" destination="pDe-fz-zWC" id="tuz-pc-8Xi"/>
@@ -409,9 +415,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="Background"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" name="TrackGreen"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" name="LighterGray"/>
                             </userDefinedRuntimeAttribute>
