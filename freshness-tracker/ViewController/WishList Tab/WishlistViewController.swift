@@ -91,11 +91,29 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             for item in appData.list {
                 if item.checked {
                     appData.removeItem(name: item.name)
+                    //remove from firebase
+                    db.collection("wishList").document(item.name).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Tracker \(item.name) successfully removed!")
+                        }
+                    }
                 }
             }
             self.wishlistTable.reloadData()
         }
         let clearAllAction = UIAlertAction(title: "Clear All", style: .destructive) { (action) in
+             //clear firebase collection
+            for item in appData.list{
+                db.collection("wishList").document(item.name).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Tracker \(item.name) successfully removed!")
+                    }
+                }
+            }
             appData.list = []
             self.wishlistTable.reloadData()
         }
