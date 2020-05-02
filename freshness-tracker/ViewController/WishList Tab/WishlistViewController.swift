@@ -86,7 +86,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         message: "", preferredStyle: .actionSheet)
         
         
-        let clearCompletedAction = UIAlertAction(title: "Clear Completed",style: .default
+        let clearCompletedAction = UIAlertAction(title: "Clear Completed",style: .destructive
         ) { (action) in
             for item in appData.list {
                 if item.checked {
@@ -95,7 +95,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             }
             self.wishlistTable.reloadData()
         }
-        let ckearAllAction = UIAlertAction(title: "Clear All", style: .default) { (action) in
+        let clearAllAction = UIAlertAction(title: "Clear All", style: .destructive) { (action) in
             appData.list = []
             self.wishlistTable.reloadData()
         }
@@ -106,7 +106,7 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         }
              
         alert.addAction(clearCompletedAction)
-        alert.addAction(ckearAllAction)
+        alert.addAction(clearAllAction)
         alert.addAction(cancelAction)
              
         present(alert, animated: true, completion: nil)
@@ -121,6 +121,8 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
         
+        UITabBar.appearance().tintColor = UIColor(named: "WishListOrange")!
+        
         //set up gesture
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(didTapView))
@@ -131,10 +133,11 @@ class WishlistViewController: UIViewController, UITableViewDelegate, UITableView
             fetchWishListData(completion:{ result in
                 if(result){
                    print("Wish list data fetched successfully")
+                    appData.sortItems()
                    self.wishlistTable.reloadData()
                    print("reload sucessful")
                 }else{
-                    print("Fail to fetch wish list data from firebase")
+                   print("Fail to fetch wish list data from firebase")
                 }
             })
         }

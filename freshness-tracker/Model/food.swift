@@ -69,7 +69,7 @@ class AppData {
         
         //wish list
         let freshMilk = ListEntry(name: "Fresh Milk", checked: false)
-        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: true)
+        let pineappleSausage = ListEntry(name: "Pineapple Sausage", checked: false)
         
         self.list.append(freshMilk)
         self.list.append(pineappleSausage)
@@ -94,46 +94,55 @@ class AppData {
         uploadMetadata.contentType = "image/jpeg"
         storageRef.putData(imageData)
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("tracker")
-        .addDocument(data: [
-            "name":food.name,
-            "imageID": imageID,
-            "expireDate":expireDate,
-            "dateAdded":dateAdded
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Tracker added with ID: \(ref!.documentID)")
+        db.collection("tracker").document(food.name)
+            .setData([
+                "name":food.name,
+                "imageID": imageID,
+                "expireDate":expireDate,
+                "dateAdded":dateAdded
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Tracker added with Name: \(food.name)")
+                }
             }
-        }
     }
     
     func addListEntry(item: ListEntry) {
-        self.list.append(item)
-        
-        print("add list")
+        if(!self.list.contains(where: {$0.name == item.name})){
+            self.list.append(item)
+            print("add list")
         
         //add to firebase
-        var ref: DocumentReference? = nil
-        ref = db.collection("wishList")
-            .addDocument(data:[
+        db.collection("wishList").document(item.name)
+            .setData([
                 "name": item.name,
                 "checked": item.checked]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
 
                     } else {
-                        print("Wish List added with ID: \(ref!.documentID)")
+                        print("Wish List added with ID: \(item.name)")
                     }
                 }
+        } else {
+            print("Item already in wish list")
+        }
     }
     
     func removeFood(name: String) {
         for (index, food) in tracker.enumerated() {
             if (food.name == name) {
                 tracker.remove(at: index)
+                //remove from firebase
+                db.collection("tracker").document(food.name).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Tracker \(food.name) successfully removed!")
+                    }
+                }
                 return
             }
         }
@@ -151,6 +160,13 @@ class AppData {
         for (index, item) in list.enumerated() {
             if (item.name == name) {
                 list.remove(at: index)
+                db.collection("wishList").document(item.name).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Tracker \(item.name) successfully removed!")
+                    }
+                }
                 return
             }
         }

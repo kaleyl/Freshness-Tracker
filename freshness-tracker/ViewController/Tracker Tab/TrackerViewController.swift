@@ -26,7 +26,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         TrackerTableView.delegate = self
         TrackerTableView.dataSource = self
         searchBar.delegate = self
-        
+        UITabBar.appearance().tintColor = UIColor(named: "TrackGreen")!
         //Firebase content
         if(appData.ifTrackerEmpty()){
             fetchTrackerData(completion:{ result in
@@ -103,6 +103,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             //action here
             let newItem = ListEntry(name: selectedFood.name, checked: false)
             appData.addListEntry(item: newItem)
+            appData.sortItems()
             success(true)
         })
         AddAction.backgroundColor = .orange
